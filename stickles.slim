@@ -1,0 +1,57 @@
+initialize() {
+ defineConstant("L", 1e8);
+ initializeTreeSeq();
+ initializeMutationRate(0);
+ initializeMutationType("m1", 0.5, "f", 0.0);
+ initializeGenomicElementType("g1", m1, 1.0);
+ initializeGenomicElement(g1, 0, L-1);
+ initializeRecombinationRate(1e-8);
+}
+
+1 late() {
+sim.addSubpop("p1", 125);
+sim.addSubpop("p2", 125);
+sim.addSubpop("p3", 125);
+sim.addSubpop("p4", 125);
+sim.addSubpop("p5", 125);
+sim.addSubpop("p6", 125);
+sim.addSubpop("p7", 125);
+sim.addSubpop("p8", 125);
+sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
+
+sim.addSubpop("p9", 1000);
+p9.setMigrationRates(c(p1, p2, p3, p4, p5, p6, p7, p8), c(0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125));
+}
+
+2 late() {
+p9.setMigrationRates(c(p1, p2, p3, p4, p5, p6, p7, p8), c(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+p1.setSubpopulationSize(0);
+p2.setSubpopulationSize(0);
+p3.setSubpopulationSize(0);
+p4.setSubpopulationSize(0);
+p5.setSubpopulationSize(0);
+p6.setSubpopulationSize(0);
+p7.setSubpopulationSize(0);
+p8.setSubpopulationSize(0);
+}
+
+100 late() {
+ sim.treeSeqOutput("~/output/sticklebacks.trees");
+ sim.simulationFinished();
+} 
+
+// Scenario
+// fitness (m1) {
+// return 1.25
+// {
+
+// Frequency-dependent selection
+// fitness(m1) {
+// return 1.0 + sim.mutationFrequencies(p1, mut);
+// }
+
+// Temporally varying selection
+// 20:50 fitness(m1) { return 1.0; }
+
+// Spatially varying selection
+// fitness(m2, p5) { return 1/relFitness; } 
