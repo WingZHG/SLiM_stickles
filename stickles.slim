@@ -9,14 +9,14 @@ initialize() {
 }
 
 1 late() {
-sim.addSubpop("p1", 125);
-sim.addSubpop("p2", 125);
-sim.addSubpop("p3", 125);
-sim.addSubpop("p4", 125);
-sim.addSubpop("p5", 125);
-sim.addSubpop("p6", 125);
-sim.addSubpop("p7", 125);
-sim.addSubpop("p8", 125);
+sim.addSubpop("p1", 1000);
+sim.addSubpop("p2", 1000);
+sim.addSubpop("p3", 1000);
+sim.addSubpop("p4", 1000);
+sim.addSubpop("p5", 1000);
+sim.addSubpop("p6", 1000);
+sim.addSubpop("p7", 1000);
+sim.addSubpop("p8", 1000);
 sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
 
 sim.addSubpop("p9", 1000);
@@ -35,8 +35,8 @@ p7.setSubpopulationSize(0);
 p8.setSubpopulationSize(0);
 }
 
-100 late() {
- sim.treeSeqOutput("~/output/sticklebacks.trees");
+3 late() {
+ sim.treeSeqOutput("E:/git/SLiM_stickles/output/sticklebacks.trees");
  sim.simulationFinished();
 } 
 
