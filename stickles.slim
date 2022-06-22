@@ -1,42 +1,94 @@
 initialize() {
- defineConstant("L", 1e8);
- initializeTreeSeq();
+ defineConstant("L", 1e6); // 1e6 for testing - 1e8 for actual run
+ initializeTreeSeq(); // ancestry tracking
  initializeMutationRate(0);
- initializeMutationType("m1", 0.5, "f", 0.0);
+ initializeMutationType("m1", 0.5, "f", 0.1);
+ initializeMutationType("m2", 0.5, "f", 0.0); // p1 marker
+ initializeMutationType("m3", 0.5, "f", 0.0); // p2 marker
+ initializeMutationType("m4", 0.5, "f", 0.0); // p3 marker
+ initializeMutationType("m5", 0.5, "f", 0.0); // p4 marker
+ // no substitution when reaching fixation 
+ m2.convertToSubstitution = F;
+ m3.convertToSubstitution = F;
+ m4.convertToSubstitution = F;
+ m5.convertToSubstitution = F;
  initializeGenomicElementType("g1", m1, 1.0);
  initializeGenomicElement(g1, 0, L-1);
  initializeRecombinationRate(1e-8);
 }
 
+// 4 source population
 1 late() {
 sim.addSubpop("p1", 1000);
 sim.addSubpop("p2", 1000);
 sim.addSubpop("p3", 1000);
 sim.addSubpop("p4", 1000);
-sim.addSubpop("p5", 1000);
-sim.addSubpop("p6", 1000);
-sim.addSubpop("p7", 1000);
-sim.addSubpop("p8", 1000);
-sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
 
-sim.addSubpop("p9", 1000);
-p9.setMigrationRates(c(p1, p2, p3, p4, p5, p6, p7, p8), c(0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125));
+// introduce tracker mutation/SNP
+p1.genomes.addNewMutation(m2, 0.0, asInteger(L * 0.2):asInteger(L * 0.20001));
+p2.genomes.addNewMutation(m3, 0.0, asInteger(L * 0.4):asInteger(L * 0.40001));
+p3.genomes.addNewMutation(m4, 0.0, asInteger(L * 0.6):asInteger(L * 0.60001));
+p4.genomes.addNewMutation(m5, 0.0, asInteger(L * 0.8):asInteger(L * 0.80001));
+
+sim.treeSeqRememberIndividuals(sim.subpopulations.individuals); // ancestry tracking
+
+
+sim.addSubpop("p5", 1000); // add merged population
+p5.setMigrationRates(c(p1, p2, p3, p4), c(0.25, 0.25, 0.25, 0.25)); // introduce individuals from source population into merged population
 }
 
 2 late() {
-p9.setMigrationRates(c(p1, p2, p3, p4, p5, p6, p7, p8), c(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+p5.setMigrationRates(c(p1, p2, p3, p4), c(0.0, 0.0, 0.0, 0.0)); // stop adding individuals into merged population
+// remove source populations
 p1.setSubpopulationSize(0);
 p2.setSubpopulationSize(0);
 p3.setSubpopulationSize(0);
 p4.setSubpopulationSize(0);
-p5.setSubpopulationSize(0);
-p6.setSubpopulationSize(0);
-p7.setSubpopulationSize(0);
-p8.setSubpopulationSize(0);
+
 }
 
-20 late() {
+7 late() {
  sim.treeSeqOutput("E:/git/SLiM_stickles/output/sticklebacks.trees");
+ 
+  p5g = p5.genomes;
+
+ p1Total = sum(p5g.countOfMutationsOfType(m2));
+ p2Total = sum(p5g.countOfMutationsOfType(m3));
+ p3Total = sum(p5g.countOfMutationsOfType(m4));
+ p4Total = sum(p5g.countOfMutationsOfType(m5));
+ maxTotal = p1Total + p2Total + p3Total + p4Total;
+ p1TotalFraction = p1Total / maxTotal;
+ catn("Fraction with p1 ancestry: " + p1TotalFraction);
+ p2TotalFraction = p2Total / maxTotal;
+ catn("Fraction with p2 ancestry: " + p2TotalFraction);
+ p3TotalFraction = p3Total / maxTotal;
+ catn("Fraction with p3 ancestry: " + p3TotalFraction);
+ p4TotalFraction = p4Total / maxTotal;
+ catn("Fraction with p4 ancestry: " + p4TotalFraction);
+
+
+for (i in p5.individuals)
+ 	{
+ 		TrueAnTot = i.countOfMutationsOfType(m2) + i.countOfMutationsOfType(m3)+ i.countOfMutationsOfType(m4)+ i.countOfMutationsOfType(m5);
+		p1TrueAn = i.countOfMutationsOfType(m2);
+		p1TrueAnFrac = p1TrueAn / TrueAnTot;
+		
+		p2TrueAn = i.countOfMutationsOfType(m3);
+		p2TrueAnFrac = p2TrueAn / TrueAnTot;
+
+		p3TrueAn = i.countOfMutationsOfType(m4);
+		p3TrueAnFrac = p3TrueAn / TrueAnTot;
+		
+		p4TrueAn = i.countOfMutationsOfType(m5);
+		p4TrueAnFrac = p4TrueAn / TrueAnTot;
+		
+		catn(p1TrueAnFrac	+ "	" + p2TrueAnFrac + "	" + p3TrueAnFrac + "	" + p4TrueAnFrac);
+
+		line = paste(p1TrueAnFrac, p2TrueAnFrac, p3TrueAnFrac, p4TrueAnFrac);
+ 		writeFile("E:/git/SLiM_stickles/output/log.txt", line, append=T);
+
+	} 
+ 
  sim.simulationFinished();
 } 
 
