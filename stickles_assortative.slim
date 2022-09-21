@@ -1,0 +1,323 @@
+initialize() {
+	defineConstant("L", 1e9); // 1e6 for testing - 1e8 for actual run
+	defineConstant("MPP", 24);
+	initializeTreeSeq(); // ancestry tracking
+	initializeMutationRate(0);
+ 	initializeMutationType("m9999", 0.5, "f", 0.0);
+//	initializeMutationType("m991", 0.5, "f", 0.0);
+// 	initializeMutationType("m994", 0.5, "f", 0.0);
+ 		
+	n_source_population = 4;
+	markers_per_population = 24;
+	total_markers = markers_per_population * n_source_population;
+
+	for (i in 1:total_markers)
+	{
+	mut_id = "m" + i;
+	initializeMutationType(mut_id, 0.5, "f", 0.0);
+	}
+ 
+
+ initializeGenomicElementType("g1", m9999, 0.0);
+ initializeGenomicElement(g1, 0, L-1);
+ initializeRecombinationRate(1e-8);
+}
+
+// 4 source population
+1 late() {
+sim.addSubpop("p1", 1000);
+sim.addSubpop("p2", 1000);
+sim.addSubpop("p3", 1000);
+sim.addSubpop("p4", 1000);
+
+// introduce tracker mutation/SNP
+
+sample(p1.genomes, 850).addNewDrawnMutation(m1, asInteger(L * 0.00));
+sample(p1.genomes, 850).addNewDrawnMutation(m2, asInteger(L * 0.15));
+sample(p1.genomes, 850).addNewDrawnMutation(m3, asInteger(L * 0.20));
+sample(p1.genomes, 850).addNewDrawnMutation(m4, asInteger(L * 0.25));
+sample(p1.genomes, 850).addNewDrawnMutation(m5, asInteger(L * 0.30));
+sample(p1.genomes, 850).addNewDrawnMutation(m6, asInteger(L * 0.35));
+sample(p1.genomes, 850).addNewDrawnMutation(m7, asInteger(L * 0.40));
+sample(p1.genomes, 850).addNewDrawnMutation(m8, asInteger(L * 0.45));
+sample(p1.genomes, 850).addNewDrawnMutation(m9, asInteger(L * 0.50));
+sample(p1.genomes, 850).addNewDrawnMutation(m10, asInteger(L * 0.55));
+sample(p1.genomes, 850).addNewDrawnMutation(m11, asInteger(L * 0.60));
+sample(p1.genomes, 850).addNewDrawnMutation(m12, asInteger(L * 0.65));
+sample(p1.genomes, 850).addNewDrawnMutation(m13, asInteger(L * 0.70));
+sample(p1.genomes, 850).addNewDrawnMutation(m14, asInteger(L * 0.75));
+sample(p1.genomes, 850).addNewDrawnMutation(m15, asInteger(L * 0.80));
+sample(p1.genomes, 850).addNewDrawnMutation(m16, asInteger(L * 0.85));
+sample(p1.genomes, 850).addNewDrawnMutation(m17, asInteger(L * 0.90));
+sample(p1.genomes, 850).addNewDrawnMutation(m18, asInteger(L * 0.95));
+sample(p1.genomes, 850).addNewDrawnMutation(m19, asInteger(L * 0.99));
+sample(p1.genomes, 850).addNewDrawnMutation(m20, asInteger(L * 0.04));
+sample(p1.genomes, 850).addNewDrawnMutation(m21, asInteger(L * 0.10));
+sample(p1.genomes, 850).addNewDrawnMutation(m22, asInteger(L * 0.05));
+sample(p1.genomes, 850).addNewDrawnMutation(m23, asInteger(L * 0.09));
+sample(p1.genomes, 850).addNewDrawnMutation(m24, asInteger(L * 0.14));
+
+//sample(p1.genomes, 1000).addNewDrawnMutation(m991, 10000);
+
+
+sample(p2.genomes, 850).addNewDrawnMutation(m25, asInteger(L * 0.01));
+sample(p2.genomes, 850).addNewDrawnMutation(m26, asInteger(L * 0.06));
+sample(p2.genomes, 850).addNewDrawnMutation(m27, asInteger(L * 0.11));
+sample(p2.genomes, 850).addNewDrawnMutation(m28, asInteger(L * 0.16));
+sample(p2.genomes, 850).addNewDrawnMutation(m29, asInteger(L * 0.21));
+sample(p2.genomes, 850).addNewDrawnMutation(m30, asInteger(L * 0.26));
+sample(p2.genomes, 850).addNewDrawnMutation(m31, asInteger(L * 0.31));
+sample(p2.genomes, 850).addNewDrawnMutation(m32, asInteger(L * 0.36));
+sample(p2.genomes, 850).addNewDrawnMutation(m33, asInteger(L * 0.41));
+sample(p2.genomes, 850).addNewDrawnMutation(m34, asInteger(L * 0.46));
+sample(p2.genomes, 850).addNewDrawnMutation(m35, asInteger(L * 0.51));
+sample(p2.genomes, 850).addNewDrawnMutation(m36, asInteger(L * 0.56));
+sample(p2.genomes, 850).addNewDrawnMutation(m37, asInteger(L * 0.61));
+sample(p2.genomes, 850).addNewDrawnMutation(m38, asInteger(L * 0.66));
+sample(p2.genomes, 850).addNewDrawnMutation(m39, asInteger(L * 0.71));
+sample(p2.genomes, 850).addNewDrawnMutation(m40, asInteger(L * 0.76));
+sample(p2.genomes, 850).addNewDrawnMutation(m41, asInteger(L * 0.81));
+sample(p2.genomes, 850).addNewDrawnMutation(m42, asInteger(L * 0.86));
+sample(p2.genomes, 850).addNewDrawnMutation(m43, asInteger(L * 0.91));
+sample(p2.genomes, 850).addNewDrawnMutation(m44, asInteger(L * 0.96));
+sample(p2.genomes, 850).addNewDrawnMutation(m45, asInteger(L * 0.19));
+sample(p2.genomes, 850).addNewDrawnMutation(m46, asInteger(L * 0.24));
+sample(p2.genomes, 850).addNewDrawnMutation(m47, asInteger(L * 0.29));
+sample(p2.genomes, 850).addNewDrawnMutation(m48, asInteger(L * 0.34));
+
+
+
+sample(p3.genomes, 850).addNewDrawnMutation(m49, asInteger(L * 0.02));
+sample(p3.genomes, 850).addNewDrawnMutation(m50, asInteger(L * 0.07));
+sample(p3.genomes, 850).addNewDrawnMutation(m51, asInteger(L * 0.12));
+sample(p3.genomes, 850).addNewDrawnMutation(m52, asInteger(L * 0.17));
+sample(p3.genomes, 850).addNewDrawnMutation(m53, asInteger(L * 0.22));
+sample(p3.genomes, 850).addNewDrawnMutation(m54, asInteger(L * 0.27));
+sample(p3.genomes, 850).addNewDrawnMutation(m55, asInteger(L * 0.32));
+sample(p3.genomes, 850).addNewDrawnMutation(m56, asInteger(L * 0.37));
+sample(p3.genomes, 850).addNewDrawnMutation(m57, asInteger(L * 0.42));
+sample(p3.genomes, 850).addNewDrawnMutation(m58, asInteger(L * 0.47));
+sample(p3.genomes, 850).addNewDrawnMutation(m59, asInteger(L * 0.52));
+sample(p3.genomes, 850).addNewDrawnMutation(m60, asInteger(L * 0.57));
+sample(p3.genomes, 850).addNewDrawnMutation(m61, asInteger(L * 0.62));
+sample(p3.genomes, 850).addNewDrawnMutation(m62, asInteger(L * 0.67));
+sample(p3.genomes, 850).addNewDrawnMutation(m63, asInteger(L * 0.72));
+sample(p3.genomes, 850).addNewDrawnMutation(m64, asInteger(L * 0.77));
+sample(p3.genomes, 850).addNewDrawnMutation(m65, asInteger(L * 0.82));
+sample(p3.genomes, 850).addNewDrawnMutation(m66, asInteger(L * 0.87));
+sample(p3.genomes, 850).addNewDrawnMutation(m67, asInteger(L * 0.92));
+sample(p3.genomes, 850).addNewDrawnMutation(m68, asInteger(L * 0.97));
+sample(p3.genomes, 850).addNewDrawnMutation(m69, asInteger(L * 0.39));
+sample(p3.genomes, 850).addNewDrawnMutation(m70, asInteger(L * 0.44));
+sample(p3.genomes, 850).addNewDrawnMutation(m71, asInteger(L * 0.49));
+sample(p3.genomes, 850).addNewDrawnMutation(m72, asInteger(L * 0.54));
+
+sample(p4.genomes, 850).addNewDrawnMutation(m73, asInteger(L * 0.03));
+sample(p4.genomes, 850).addNewDrawnMutation(m74, asInteger(L * 0.08));
+sample(p4.genomes, 850).addNewDrawnMutation(m75, asInteger(L * 0.13));
+sample(p4.genomes, 850).addNewDrawnMutation(m76, asInteger(L * 0.18));
+sample(p4.genomes, 850).addNewDrawnMutation(m77, asInteger(L * 0.23));
+sample(p4.genomes, 850).addNewDrawnMutation(m78, asInteger(L * 0.28));
+sample(p4.genomes, 850).addNewDrawnMutation(m79, asInteger(L * 0.33));
+sample(p4.genomes, 850).addNewDrawnMutation(m80, asInteger(L * 0.38));
+sample(p4.genomes, 850).addNewDrawnMutation(m81, asInteger(L * 0.43));
+sample(p4.genomes, 850).addNewDrawnMutation(m82, asInteger(L * 0.48));
+sample(p4.genomes, 850).addNewDrawnMutation(m83, asInteger(L * 0.53));
+sample(p4.genomes, 850).addNewDrawnMutation(m84, asInteger(L * 0.58));
+sample(p4.genomes, 850).addNewDrawnMutation(m85, asInteger(L * 0.63));
+sample(p4.genomes, 850).addNewDrawnMutation(m86, asInteger(L * 0.68));
+sample(p4.genomes, 850).addNewDrawnMutation(m87, asInteger(L * 0.73));
+sample(p4.genomes, 850).addNewDrawnMutation(m88, asInteger(L * 0.78));
+sample(p4.genomes, 850).addNewDrawnMutation(m89, asInteger(L * 0.83));
+sample(p4.genomes, 850).addNewDrawnMutation(m90, asInteger(L * 0.88));
+sample(p4.genomes, 850).addNewDrawnMutation(m91, asInteger(L * 0.93));
+sample(p4.genomes, 850).addNewDrawnMutation(m92, asInteger(L * 0.98));
+sample(p4.genomes, 850).addNewDrawnMutation(m93, asInteger(L * 0.59));
+sample(p4.genomes, 850).addNewDrawnMutation(m94, asInteger(L * 0.64));
+sample(p4.genomes, 850).addNewDrawnMutation(m95, asInteger(L * 0.69));
+sample(p4.genomes, 850).addNewDrawnMutation(m96, asInteger(L * 0.74));
+
+//sample(p4.genomes, 1000).addNewDrawnMutation(m994, 10000);
+
+for (m in sim.mutations.mutationType)
+	{
+	m.convertToSubstitution = F;
+	}
+
+sim.treeSeqRememberIndividuals(sim.subpopulations.individuals); // ancestry tracking
+
+
+sim.addSubpop("p5", 1000); // add merged population
+p5.setMigrationRates(c(p1, p2, p3, p4), c(0.25, 0.25, 0.25, 0.25)); // introduce individuals from source population into merged population
+}
+
+
+
+2 late() {
+p5.setMigrationRates(c(p1, p2, p3, p4), c(0.0, 0.0, 0.0, 0.0)); // stop adding individuals into merged population
+// remove source populations
+p1.setSubpopulationSize(0);
+p2.setSubpopulationSize(0);
+p3.setSubpopulationSize(0);
+p4.setSubpopulationSize(0);
+
+
+}
+
+
+
+
+1000 late() {
+sim.treeSeqOutput("E:/git/SLiM_stickles/output/sticklebacks.trees");
+ 
+  p5g = p5.genomes;
+	maxTotal = 0;
+	p1Total = 0;
+	p2Total = 0;
+	p3Total = 0;
+	p4Total = 0;
+
+	countp1 = 0;
+	countp2 = 0;
+	countp3 = 0;
+	countp4 = 0;
+	
+
+	for (m in sim.mutations.mutationType)
+	{	
+		countp1 = countp1 + 1;
+		if (countp1 <= MPP) 
+			p1Total = p1Total + sum(p5g.countOfMutationsOfType(m));
+	}
+
+	for (m in sim.mutations.mutationType)
+	{	
+		countp2 = countp2 + 1;
+		if (countp2 <= (2 * MPP) & countp2 > MPP) 
+			{
+				p2Total = p2Total + sum(p5g.countOfMutationsOfType(m));
+			}
+	}
+
+	for (m in sim.mutations.mutationType)
+	{	
+		countp3 = countp3 + 1;
+		if (countp3 <= (3 * MPP) & countp3 > (2 * MPP)) 
+			{
+				p3Total = p3Total + sum(p5g.countOfMutationsOfType(m));
+			}
+	}
+
+	for (m in sim.mutations.mutationType)
+	{	
+		countp4 = countp4 + 1;
+		if (countp4 <= (4 * MPP) & countp4 > (3 * MPP)) 
+			{
+				p4Total = p4Total + sum(p5g.countOfMutationsOfType(m));
+			}
+	}
+
+ 
+ maxTotal = p1Total + p2Total + p3Total + p4Total;
+ p1TotalFraction = p1Total / maxTotal;
+ catn("Fraction with p1 ancestry: " + p1TotalFraction);
+ p2TotalFraction = p2Total / maxTotal;
+ catn("Fraction with p2 ancestry: " + p2TotalFraction);
+ p3TotalFraction = p3Total / maxTotal;
+ catn("Fraction with p3 ancestry: " + p3TotalFraction);
+ p4TotalFraction = p4Total / maxTotal;
+ catn("Fraction with p4 ancestry: " + p4TotalFraction);
+
+header = paste("X", ",", "P1AncestryProportion", ",", "P2AncestryProportion", ",", "P3AncestryProportion", ",", "P4AncestryProportion");
+writeFile("E:/git/SLiM_stickles/output/mut.csv", header);
+
+
+
+count = 0;
+
+for (i in p5.individuals)
+ 	{
+		TrueAnTot = 0;
+		p1TrueAn = 0;
+		p2TrueAn = 0;
+		p3TrueAn = 0;
+		p4TrueAn = 0;
+		countp1 = 0;
+		countp2 = 0;
+		countp3 = 0;
+		countp4 = 0;
+		for (m in sim.mutations.mutationType)
+			{
+				TrueAnTot = TrueAnTot + i.countOfMutationsOfType(m);
+			}
+
+		for (m in sim.mutations.mutationType)
+			{	
+				countp1 = countp1 + 1;
+				if (countp1 <= MPP) 
+					{
+						p1TrueAn = p1TrueAn + i.countOfMutationsOfType(m);
+					}
+			}
+
+		for (m in sim.mutations.mutationType)
+			{	
+				countp2 = countp2 + 1;
+				if (countp2 <= (2 * MPP) & countp2 > MPP) 
+					{
+						p2TrueAn = p2TrueAn + i.countOfMutationsOfType(m);
+					}
+			}
+
+		for (m in sim.mutations.mutationType)
+			{	
+				countp3 = countp3 + 1;
+				if (countp3 <= (3 * MPP) & countp3 > (2 * MPP)) 
+					{
+						p3TrueAn = p3TrueAn + i.countOfMutationsOfType(m);
+					}
+			}
+
+		for (m in sim.mutations.mutationType)
+			{	
+				countp4 = countp4 + 1;
+				if (countp4 <= (4 * MPP) & countp4 > (3 * MPP)) 
+					{
+						p4TrueAn = p4TrueAn + i.countOfMutationsOfType(m);
+					}
+			}	
+
+		p1TrueAnFrac = p1TrueAn / TrueAnTot;
+		
+		p2TrueAnFrac = p2TrueAn / TrueAnTot;
+
+		p3TrueAnFrac = p3TrueAn / TrueAnTot;
+		
+		p4TrueAnFrac = p4TrueAn / TrueAnTot;
+		
+		catn(p1TrueAnFrac	+ "	" + p2TrueAnFrac + "	" + p3TrueAnFrac + "	" + p4TrueAnFrac);
+
+		line = paste(count, ",", p1TrueAnFrac, ",", p2TrueAnFrac, ",", p3TrueAnFrac, ",", p4TrueAnFrac);
+		writeFile("E:/git/SLiM_stickles/output/mut.csv", line, append=T);
+		count = count + 1;
+
+	} 
+ 
+ sim.simulationFinished();
+} 
+
+// Scenario
+// fitness (m1) {
+// return 1.25
+// {
+
+// Frequency-dependent selection
+// fitness(m1) {
+// return 1.0 + sim.mutationFrequencies(p1, mut);
+// }
+
+// Temporally varying selection
+// 20:50 fitness(m1) { return 1.0; }
+
+// Spatially varying selection
+// fitness(m2, p5) { return 1/relFitness; } 
