@@ -1,4 +1,5 @@
 initialize() {
+ //defineConstant("REP", i);  // simulation replicate
  defineConstant("L", 1e8); // 1e6 for testing - 1e8 for actual run
  initializeTreeSeq(); // ancestry tracking
  initializeMutationRate(0);
@@ -242,234 +243,241 @@ sim.addSubpop("p7", 1000);
 sim.addSubpop("p8", 1000);
 
 // introduce tracker mutation/SNP
+// Benthic
 
-sample(p1.genomes, 850).addNewDrawnMutation(m2, asInteger(L * 0.01));
-sample(p1.genomes, 850).addNewDrawnMutation(m3, asInteger(L * 0.02));
-sample(p1.genomes, 850).addNewDrawnMutation(m4, asInteger(L * 0.03));
-sample(p1.genomes, 850).addNewDrawnMutation(m5, asInteger(L * 0.04));
-sample(p1.genomes, 850).addNewDrawnMutation(m6, asInteger(L * 0.05));
-sample(p1.genomes, 850).addNewDrawnMutation(m7, asInteger(L * 0.06));
-sample(p1.genomes, 850).addNewDrawnMutation(m8, asInteger(L * 0.07));
-sample(p1.genomes, 850).addNewDrawnMutation(m9, asInteger(L * 0.08));
-sample(p1.genomes, 850).addNewDrawnMutation(m10, asInteger(L * 0.09));
-sample(p1.genomes, 850).addNewDrawnMutation(m11, asInteger(L * 0.10));
-sample(p1.genomes, 850).addNewDrawnMutation(m12, asInteger(L * 0.11));
-sample(p1.genomes, 850).addNewDrawnMutation(m13, asInteger(L * 0.12));
-sample(p1.genomes, 850).addNewDrawnMutation(m14, asInteger(L * 0.13));
-sample(p1.genomes, 850).addNewDrawnMutation(m15, asInteger(L * 0.14));
-sample(p1.genomes, 850).addNewDrawnMutation(m16, asInteger(L * 0.15));
-sample(p1.genomes, 850).addNewDrawnMutation(m17, asInteger(L * 0.16));
-sample(p1.genomes, 850).addNewDrawnMutation(m18, asInteger(L * 0.17));
-sample(p1.genomes, 850).addNewDrawnMutation(m19, asInteger(L * 0.18));
-sample(p1.genomes, 850).addNewDrawnMutation(m20, asInteger(L * 0.19));
-sample(p1.genomes, 850).addNewDrawnMutation(m21, asInteger(L * 0.20));
-sample(p1.genomes, 850).addNewDrawnMutation(m22, asInteger(L * 0.21));
-sample(p1.genomes, 850).addNewDrawnMutation(m23, asInteger(L * 0.22));
-sample(p1.genomes, 850).addNewDrawnMutation(m24, asInteger(L * 0.23));
-sample(p1.genomes, 850).addNewDrawnMutation(m25, asInteger(L * 0.24));
+//FG
+sample(p1.genomes, asInteger(1000*0.661538462)).addNewDrawnMutation(m2, asInteger(L * 0.01));
+sample(p1.genomes, asInteger(1000*0.775193798)).addNewDrawnMutation(m3, asInteger(L * 0.02));
+sample(p1.genomes, asInteger(1000*0.764705882)).addNewDrawnMutation(m4, asInteger(L * 0.03));
+sample(p1.genomes, asInteger(1000*0.737704918)).addNewDrawnMutation(m5, asInteger(L * 0.04));
+sample(p1.genomes, asInteger(1000*0.648148148)).addNewDrawnMutation(m6, asInteger(L * 0.05));
+sample(p1.genomes, asInteger(1000*0.744680851)).addNewDrawnMutation(m7, asInteger(L * 0.06));
+sample(p1.genomes, asInteger(1000*0.774647887)).addNewDrawnMutation(m8, asInteger(L * 0.07));
+sample(p1.genomes, asInteger(1000*0.609271523)).addNewDrawnMutation(m9, asInteger(L * 0.08));
+sample(p1.genomes, asInteger(1000*0.617977528)).addNewDrawnMutation(m10, asInteger(L * 0.09));
+sample(p1.genomes, asInteger(1000*0.813953488)).addNewDrawnMutation(m11, asInteger(L * 0.10));
+sample(p1.genomes, asInteger(1000*0.584337349)).addNewDrawnMutation(m12, asInteger(L * 0.11));
+sample(p1.genomes, asInteger(1000*0.527777778)).addNewDrawnMutation(m13, asInteger(L * 0.12));
+sample(p1.genomes, asInteger(1000*0.583333333)).addNewDrawnMutation(m14, asInteger(L * 0.13));
+sample(p1.genomes, asInteger(1000*0.533783784)).addNewDrawnMutation(m15, asInteger(L * 0.14));
+sample(p1.genomes, asInteger(1000*0.664233577)).addNewDrawnMutation(m16, asInteger(L * 0.15));
+sample(p1.genomes, asInteger(1000*0.931818182)).addNewDrawnMutation(m17, asInteger(L * 0.16));
+sample(p1.genomes, asInteger(1000*0.796875)).addNewDrawnMutation(m18, asInteger(L * 0.17));
+sample(p1.genomes, asInteger(1000*0.701754386)).addNewDrawnMutation(m19, asInteger(L * 0.18));
+sample(p1.genomes, asInteger(1000*0.6875)).addNewDrawnMutation(m20, asInteger(L * 0.19));
+sample(p1.genomes, asInteger(1000*0.85)).addNewDrawnMutation(m21, asInteger(L * 0.20));
+sample(p1.genomes, asInteger(1000*0.780701754)).addNewDrawnMutation(m22, asInteger(L * 0.21));
+sample(p1.genomes, asInteger(1000*0.86407767)).addNewDrawnMutation(m23, asInteger(L * 0.22));
+sample(p1.genomes, asInteger(1000*0.763888889)).addNewDrawnMutation(m24, asInteger(L * 0.23));
+sample(p1.genomes, asInteger(1000*0.494623656)).addNewDrawnMutation(m25, asInteger(L * 0.24));
 
 sample(p1.genomes, 1000).addNewDrawnMutation(m991, 10000);
 sample(p1.genomes, 1000).addNewDrawnMutation(m999, 10000);
 
-
-sample(p2.genomes, 850).addNewDrawnMutation(m26, asInteger(L * 0.25));
-sample(p2.genomes, 850).addNewDrawnMutation(m27, asInteger(L * 0.26));
-sample(p2.genomes, 850).addNewDrawnMutation(m28, asInteger(L * 0.27));
-sample(p2.genomes, 850).addNewDrawnMutation(m29, asInteger(L * 0.28));
-sample(p2.genomes, 850).addNewDrawnMutation(m30, asInteger(L * 0.29));
-sample(p2.genomes, 850).addNewDrawnMutation(m31, asInteger(L * 0.30));
-sample(p2.genomes, 850).addNewDrawnMutation(m32, asInteger(L * 0.31));
-sample(p2.genomes, 850).addNewDrawnMutation(m33, asInteger(L * 0.32));
-sample(p2.genomes, 850).addNewDrawnMutation(m34, asInteger(L * 0.33));
-sample(p2.genomes, 850).addNewDrawnMutation(m35, asInteger(L * 0.34));
-sample(p2.genomes, 850).addNewDrawnMutation(m36, asInteger(L * 0.35));
-sample(p2.genomes, 850).addNewDrawnMutation(m37, asInteger(L * 0.36));
-sample(p2.genomes, 850).addNewDrawnMutation(m38, asInteger(L * 0.37));
-sample(p2.genomes, 850).addNewDrawnMutation(m39, asInteger(L * 0.38));
-sample(p2.genomes, 850).addNewDrawnMutation(m40, asInteger(L * 0.39));
-sample(p2.genomes, 850).addNewDrawnMutation(m41, asInteger(L * 0.40));
-sample(p2.genomes, 850).addNewDrawnMutation(m42, asInteger(L * 0.41));
-sample(p2.genomes, 850).addNewDrawnMutation(m43, asInteger(L * 0.42));
-sample(p2.genomes, 850).addNewDrawnMutation(m44, asInteger(L * 0.43));
-sample(p2.genomes, 850).addNewDrawnMutation(m45, asInteger(L * 0.44));
-sample(p2.genomes, 850).addNewDrawnMutation(m46, asInteger(L * 0.45));
-sample(p2.genomes, 850).addNewDrawnMutation(m47, asInteger(L * 0.46));
-sample(p2.genomes, 850).addNewDrawnMutation(m48, asInteger(L * 0.47));
-sample(p2.genomes, 850).addNewDrawnMutation(m49, asInteger(L * 0.48));
+//TL
+sample(p2.genomes, 1000).addNewDrawnMutation(m26, asInteger(L * 0.25));
+sample(p2.genomes, 1000).addNewDrawnMutation(m27, asInteger(L * 0.26));
+sample(p2.genomes, 1000).addNewDrawnMutation(m28, asInteger(L * 0.27));
+sample(p2.genomes, 1000).addNewDrawnMutation(m29, asInteger(L * 0.28));
+sample(p2.genomes, 1000).addNewDrawnMutation(m30, asInteger(L * 0.29));
+sample(p2.genomes, 1000).addNewDrawnMutation(m31, asInteger(L * 0.30));
+sample(p2.genomes, 1000).addNewDrawnMutation(m32, asInteger(L * 0.31));
+sample(p2.genomes, 1000).addNewDrawnMutation(m33, asInteger(L * 0.32));
+sample(p2.genomes, 1000).addNewDrawnMutation(m34, asInteger(L * 0.33));
+sample(p2.genomes, 1000).addNewDrawnMutation(m35, asInteger(L * 0.34));
+sample(p2.genomes, 1000).addNewDrawnMutation(m36, asInteger(L * 0.35));
+sample(p2.genomes, 1000).addNewDrawnMutation(m37, asInteger(L * 0.36));
+sample(p2.genomes, asInteger(1000*0.97826087)).addNewDrawnMutation(m38, asInteger(L * 0.37));
+sample(p2.genomes, asInteger(1000*0.993710692)).addNewDrawnMutation(m39, asInteger(L * 0.38));
+sample(p2.genomes, 1000).addNewDrawnMutation(m40, asInteger(L * 0.39));
+sample(p2.genomes, 1000).addNewDrawnMutation(m41, asInteger(L * 0.40));
+sample(p2.genomes, 1000).addNewDrawnMutation(m42, asInteger(L * 0.41));
+sample(p2.genomes, asInteger(1000*0.9875)).addNewDrawnMutation(m43, asInteger(L * 0.42));
+sample(p2.genomes, 1000).addNewDrawnMutation(m44, asInteger(L * 0.43));
+sample(p2.genomes, 1000).addNewDrawnMutation(m45, asInteger(L * 0.44));
+sample(p2.genomes, 1000).addNewDrawnMutation(m46, asInteger(L * 0.45));
+sample(p2.genomes, asInteger(1000*0.989795918)).addNewDrawnMutation(m47, asInteger(L * 0.46));
+sample(p2.genomes, 1000).addNewDrawnMutation(m48, asInteger(L * 0.47));
+sample(p2.genomes, asInteger(1000*0.985074627)).addNewDrawnMutation(m49, asInteger(L * 0.48));
 
 sample(p2.genomes, 1000).addNewDrawnMutation(m992, 10000);
 sample(p2.genomes, 1000).addNewDrawnMutation(m999, 10000);
 
 
-sample(p3.genomes, 850).addNewDrawnMutation(m50, asInteger(L * 0.49));
-sample(p3.genomes, 850).addNewDrawnMutation(m51, asInteger(L * 0.50));
-sample(p3.genomes, 850).addNewDrawnMutation(m52, asInteger(L * 0.51));
-sample(p3.genomes, 850).addNewDrawnMutation(m53, asInteger(L * 0.52));
-sample(p3.genomes, 850).addNewDrawnMutation(m54, asInteger(L * 0.53));
-sample(p3.genomes, 850).addNewDrawnMutation(m55, asInteger(L * 0.54));
-sample(p3.genomes, 850).addNewDrawnMutation(m56, asInteger(L * 0.55));
-sample(p3.genomes, 850).addNewDrawnMutation(m57, asInteger(L * 0.56));
-sample(p3.genomes, 850).addNewDrawnMutation(m58, asInteger(L * 0.57));
-sample(p3.genomes, 850).addNewDrawnMutation(m59, asInteger(L * 0.58));
-sample(p3.genomes, 850).addNewDrawnMutation(m60, asInteger(L * 0.59));
-sample(p3.genomes, 850).addNewDrawnMutation(m61, asInteger(L * 0.60));
-sample(p3.genomes, 850).addNewDrawnMutation(m62, asInteger(L * 0.61));
-sample(p3.genomes, 850).addNewDrawnMutation(m63, asInteger(L * 0.62));
-sample(p3.genomes, 850).addNewDrawnMutation(m64, asInteger(L * 0.63));
-sample(p3.genomes, 850).addNewDrawnMutation(m65, asInteger(L * 0.64));
-sample(p3.genomes, 850).addNewDrawnMutation(m66, asInteger(L * 0.65));
-sample(p3.genomes, 850).addNewDrawnMutation(m67, asInteger(L * 0.66));
-sample(p3.genomes, 850).addNewDrawnMutation(m68, asInteger(L * 0.67));
-sample(p3.genomes, 850).addNewDrawnMutation(m69, asInteger(L * 0.68));
-sample(p3.genomes, 850).addNewDrawnMutation(m70, asInteger(L * 0.69));
-sample(p3.genomes, 850).addNewDrawnMutation(m71, asInteger(L * 0.70));
-sample(p3.genomes, 850).addNewDrawnMutation(m72, asInteger(L * 0.71));
-sample(p3.genomes, 850).addNewDrawnMutation(m73, asInteger(L * 0.72));
+//WB
+sample(p3.genomes, asInteger(1000*0.684210526)).addNewDrawnMutation(m50, asInteger(L * 0.49));
+sample(p3.genomes, asInteger(1000*0.695652174)).addNewDrawnMutation(m51, asInteger(L * 0.50));
+sample(p3.genomes, asInteger(1000*0.669811321)).addNewDrawnMutation(m52, asInteger(L * 0.51));
+sample(p3.genomes, asInteger(1000*0.894736842)).addNewDrawnMutation(m53, asInteger(L * 0.52));
+sample(p3.genomes, asInteger(1000*0.91588785)).addNewDrawnMutation(m54, asInteger(L * 0.53));
+sample(p3.genomes, asInteger(1000*0.908256881)).addNewDrawnMutation(m55, asInteger(L * 0.54));
+sample(p3.genomes, asInteger(1000*0.617647059)).addNewDrawnMutation(m56, asInteger(L * 0.55));
+sample(p3.genomes, asInteger(1000*0.705128205)).addNewDrawnMutation(m57, asInteger(L * 0.56));
+sample(p3.genomes, asInteger(1000*0.8)).addNewDrawnMutation(m58, asInteger(L * 0.57));
+sample(p3.genomes, asInteger(1000*0.626506024)).addNewDrawnMutation(m59, asInteger(L * 0.58));
+sample(p3.genomes, asInteger(1000*0.634920635)).addNewDrawnMutation(m60, asInteger(L * 0.59));
+sample(p3.genomes, asInteger(1000*0.838383838)).addNewDrawnMutation(m61, asInteger(L * 0.60));
+sample(p3.genomes, asInteger(1000*0.848837209)).addNewDrawnMutation(m62, asInteger(L * 0.61));
+sample(p3.genomes, asInteger(1000*0.804878049)).addNewDrawnMutation(m63, asInteger(L * 0.62));
+sample(p3.genomes, asInteger(1000*0.641025641)).addNewDrawnMutation(m64, asInteger(L * 0.63));
+sample(p3.genomes, asInteger(1000*0.610526316)).addNewDrawnMutation(m65, asInteger(L * 0.64));
+sample(p3.genomes, asInteger(1000*0.631578947)).addNewDrawnMutation(m66, asInteger(L * 0.65));
+sample(p3.genomes, asInteger(1000*0.925)).addNewDrawnMutation(m67, asInteger(L * 0.66));
+sample(p3.genomes, asInteger(1000*0.673076923)).addNewDrawnMutation(m68, asInteger(L * 0.67));
+sample(p3.genomes, asInteger(1000*0.908256881)).addNewDrawnMutation(m69, asInteger(L * 0.68));
+sample(p3.genomes, asInteger(1000*0.896907216)).addNewDrawnMutation(m70, asInteger(L * 0.69));
+sample(p3.genomes, asInteger(1000*0.9)).addNewDrawnMutation(m71, asInteger(L * 0.70));
+sample(p3.genomes, asInteger(1000*0.897058824)).addNewDrawnMutation(m72, asInteger(L * 0.71));
+sample(p3.genomes, asInteger(1000*0.843478261)).addNewDrawnMutation(m73, asInteger(L * 0.72));
 
 sample(p3.genomes, 1000).addNewDrawnMutation(m993, 10000);
 sample(p3.genomes, 1000).addNewDrawnMutation(m999, 10000);
 
 
-sample(p4.genomes, 850).addNewDrawnMutation(m74, asInteger(L * 0.73));
-sample(p4.genomes, 850).addNewDrawnMutation(m75, asInteger(L * 0.74));
-sample(p4.genomes, 850).addNewDrawnMutation(m76, asInteger(L * 0.75));
-sample(p4.genomes, 850).addNewDrawnMutation(m77, asInteger(L * 0.76));
-sample(p4.genomes, 850).addNewDrawnMutation(m78, asInteger(L * 0.77));
-sample(p4.genomes, 850).addNewDrawnMutation(m79, asInteger(L * 0.78));
-sample(p4.genomes, 850).addNewDrawnMutation(m80, asInteger(L * 0.79));
-sample(p4.genomes, 850).addNewDrawnMutation(m81, asInteger(L * 0.80));
-sample(p4.genomes, 850).addNewDrawnMutation(m82, asInteger(L * 0.81));
-sample(p4.genomes, 850).addNewDrawnMutation(m83, asInteger(L * 0.82));
-sample(p4.genomes, 850).addNewDrawnMutation(m84, asInteger(L * 0.83));
-sample(p4.genomes, 850).addNewDrawnMutation(m85, asInteger(L * 0.84));
-sample(p4.genomes, 850).addNewDrawnMutation(m86, asInteger(L * 0.85));
-sample(p4.genomes, 850).addNewDrawnMutation(m87, asInteger(L * 0.86));
-sample(p4.genomes, 850).addNewDrawnMutation(m88, asInteger(L * 0.87));
-sample(p4.genomes, 850).addNewDrawnMutation(m89, asInteger(L * 0.88));
-sample(p4.genomes, 850).addNewDrawnMutation(m90, asInteger(L * 0.89));
-sample(p4.genomes, 850).addNewDrawnMutation(m91, asInteger(L * 0.90));
-sample(p4.genomes, 850).addNewDrawnMutation(m92, asInteger(L * 0.91));
-sample(p4.genomes, 850).addNewDrawnMutation(m93, asInteger(L * 0.92));
-sample(p4.genomes, 850).addNewDrawnMutation(m94, asInteger(L * 0.93));
-sample(p4.genomes, 850).addNewDrawnMutation(m95, asInteger(L * 0.94));
-sample(p4.genomes, 850).addNewDrawnMutation(m96, asInteger(L * 0.95));
-sample(p4.genomes, 850).addNewDrawnMutation(m97, asInteger(L * 0.96));
+//WT
+sample(p4.genomes, asInteger(1000*0.741935484)).addNewDrawnMutation(m74, asInteger(L * 0.73));
+sample(p4.genomes, asInteger(1000*0.723076923)).addNewDrawnMutation(m75, asInteger(L * 0.74));
+sample(p4.genomes, asInteger(1000*0.693181818)).addNewDrawnMutation(m76, asInteger(L * 0.75));
+sample(p4.genomes, asInteger(1000*0.736842105)).addNewDrawnMutation(m77, asInteger(L * 0.76));
+sample(p4.genomes, asInteger(1000*0.72)).addNewDrawnMutation(m78, asInteger(L * 0.77));
+sample(p4.genomes, asInteger(1000*0.61627907)).addNewDrawnMutation(m79, asInteger(L * 0.78));
+sample(p4.genomes, asInteger(1000*0.675925926)).addNewDrawnMutation(m80, asInteger(L * 0.79));
+sample(p4.genomes, asInteger(1000*0.567164179)).addNewDrawnMutation(m81, asInteger(L * 0.80));
+sample(p4.genomes, asInteger(1000*0.660714286)).addNewDrawnMutation(m82, asInteger(L * 0.81));
+sample(p4.genomes, asInteger(1000*0.789473684)).addNewDrawnMutation(m83, asInteger(L * 0.82));
+sample(p4.genomes, asInteger(1000*0.775641026)).addNewDrawnMutation(m84, asInteger(L * 0.83));
+sample(p4.genomes, asInteger(1000*0.820895522)).addNewDrawnMutation(m85, asInteger(L * 0.84));
+sample(p4.genomes, asInteger(1000*0.81512605)).addNewDrawnMutation(m86, asInteger(L * 0.85));
+sample(p4.genomes, asInteger(1000*0.784615385)).addNewDrawnMutation(m87, asInteger(L * 0.86));
+sample(p4.genomes, asInteger(1000*0.733870968)).addNewDrawnMutation(m88, asInteger(L * 0.87));
+sample(p4.genomes, asInteger(1000*0.705882353)).addNewDrawnMutation(m89, asInteger(L * 0.88));
+sample(p4.genomes, asInteger(1000*0.701149425)).addNewDrawnMutation(m90, asInteger(L * 0.89));
+sample(p4.genomes, asInteger(1000*0.582089552)).addNewDrawnMutation(m91, asInteger(L * 0.90));
+sample(p4.genomes, asInteger(1000*0.571428571)).addNewDrawnMutation(m92, asInteger(L * 0.91));
+sample(p4.genomes, asInteger(1000*0.642105263)).addNewDrawnMutation(m93, asInteger(L * 0.92));
+sample(p4.genomes, asInteger(1000*0.533333333)).addNewDrawnMutation(m94, asInteger(L * 0.93));
+sample(p4.genomes, asInteger(1000*0.519083969)).addNewDrawnMutation(m95, asInteger(L * 0.94));
+sample(p4.genomes, asInteger(1000*0.752)).addNewDrawnMutation(m96, asInteger(L * 0.95));
+sample(p4.genomes, asInteger(1000*0.588652482)).addNewDrawnMutation(m97, asInteger(L * 0.96));
 
 sample(p4.genomes, 1000).addNewDrawnMutation(m994, 10000);
 sample(p4.genomes, 1000).addNewDrawnMutation(m999, 10000);
 
 
-sample(p5.genomes, 850).addNewDrawnMutation(m98, asInteger(L * 0.01));
-sample(p5.genomes, 850).addNewDrawnMutation(m99, asInteger(L * 0.02));
-sample(p5.genomes, 850).addNewDrawnMutation(m100, asInteger(L * 0.03));
-sample(p5.genomes, 850).addNewDrawnMutation(m101, asInteger(L * 0.04));
-sample(p5.genomes, 850).addNewDrawnMutation(m102, asInteger(L * 0.05));
-sample(p5.genomes, 850).addNewDrawnMutation(m103, asInteger(L * 0.06));
-sample(p5.genomes, 850).addNewDrawnMutation(m104, asInteger(L * 0.07));
-sample(p5.genomes, 850).addNewDrawnMutation(m105, asInteger(L * 0.08));
-sample(p5.genomes, 850).addNewDrawnMutation(m106, asInteger(L * 0.09));
-sample(p5.genomes, 850).addNewDrawnMutation(m107, asInteger(L * 0.10));
-sample(p5.genomes, 850).addNewDrawnMutation(m108, asInteger(L * 0.11));
-sample(p5.genomes, 850).addNewDrawnMutation(m109, asInteger(L * 0.12));
-sample(p5.genomes, 850).addNewDrawnMutation(m110, asInteger(L * 0.13));
-sample(p5.genomes, 850).addNewDrawnMutation(m111, asInteger(L * 0.14));
-sample(p5.genomes, 850).addNewDrawnMutation(m112, asInteger(L * 0.15));
-sample(p5.genomes, 850).addNewDrawnMutation(m113, asInteger(L * 0.16));
-sample(p5.genomes, 850).addNewDrawnMutation(m114, asInteger(L * 0.17));
-sample(p5.genomes, 850).addNewDrawnMutation(m115, asInteger(L * 0.18));
-sample(p5.genomes, 850).addNewDrawnMutation(m116, asInteger(L * 0.19));
-sample(p5.genomes, 850).addNewDrawnMutation(m117, asInteger(L * 0.20));
-sample(p5.genomes, 850).addNewDrawnMutation(m118, asInteger(L * 0.21));
-sample(p5.genomes, 850).addNewDrawnMutation(m119, asInteger(L * 0.22));
-sample(p5.genomes, 850).addNewDrawnMutation(m120, asInteger(L * 0.23));
-sample(p5.genomes, 850).addNewDrawnMutation(m121, asInteger(L * 0.24));
+//Limnetic
+//LG
+sample(p5.genomes, asInteger(1000*0.688)).addNewDrawnMutation(m98, asInteger(L * 0.01));
+sample(p5.genomes, asInteger(1000*0.763779528)).addNewDrawnMutation(m99, asInteger(L * 0.02));
+sample(p5.genomes, asInteger(1000*0.745098039)).addNewDrawnMutation(m100, asInteger(L * 0.03));
+sample(p5.genomes, asInteger(1000*0.755555556)).addNewDrawnMutation(m101, asInteger(L * 0.04));
+sample(p5.genomes, asInteger(1000*0.675)).addNewDrawnMutation(m102, asInteger(L * 0.05));
+sample(p5.genomes, asInteger(1000*0.846938776)).addNewDrawnMutation(m103, asInteger(L * 0.06));
+sample(p5.genomes, asInteger(1000*0.74796748)).addNewDrawnMutation(m104, asInteger(L * 0.07));
+sample(p5.genomes, asInteger(1000*0.664)).addNewDrawnMutation(m105, asInteger(L * 0.08));
+sample(p5.genomes, asInteger(1000*0.657894737)).addNewDrawnMutation(m106, asInteger(L * 0.09));
+sample(p5.genomes, asInteger(1000*0.640350877)).addNewDrawnMutation(m107, asInteger(L * 0.10));
+sample(p5.genomes, asInteger(1000*0.692982456)).addNewDrawnMutation(m108, asInteger(L * 0.11));
+sample(p5.genomes, asInteger(1000*0.714285714)).addNewDrawnMutation(m109, asInteger(L * 0.12));
+sample(p5.genomes, asInteger(1000*0.772727273)).addNewDrawnMutation(m110, asInteger(L * 0.13));
+sample(p5.genomes, asInteger(1000*0.906976744)).addNewDrawnMutation(m111, asInteger(L * 0.14));
+sample(p5.genomes, asInteger(1000*0.803278689)).addNewDrawnMutation(m112, asInteger(L * 0.15));
+sample(p5.genomes, asInteger(1000*0.71559633)).addNewDrawnMutation(m113, asInteger(L * 0.16));
+sample(p5.genomes, asInteger(1000*0.727272727)).addNewDrawnMutation(m114, asInteger(L * 0.17));
+sample(p5.genomes, asInteger(1000*0.614814815)).addNewDrawnMutation(m115, asInteger(L * 0.18));
+sample(p5.genomes, asInteger(1000*0.5631067961)).addNewDrawnMutation(m116, asInteger(L * 0.19));
+sample(p5.genomes, asInteger(1000*0.62)).addNewDrawnMutation(m117, asInteger(L * 0.20));
+sample(p5.genomes, asInteger(1000*0.608108108)).addNewDrawnMutation(m118, asInteger(L * 0.21));
+sample(p5.genomes, asInteger(1000*0.6904761905)).addNewDrawnMutation(m119, asInteger(L * 0.22));
+sample(p5.genomes, asInteger(1000*0.686956522)).addNewDrawnMutation(m120, asInteger(L * 0.23));
+sample(p5.genomes, asInteger(1000*0.583333333)).addNewDrawnMutation(m121, asInteger(L * 0.24));
 
 sample(p5.genomes, 1000).addNewDrawnMutation(m995, 10000);
 sample(p5.genomes, 1000).addNewDrawnMutation(m1000, 10000);
 
-
-sample(p6.genomes, 850).addNewDrawnMutation(m122, asInteger(L * 0.25));
-sample(p6.genomes, 850).addNewDrawnMutation(m123, asInteger(L * 0.26));
-sample(p6.genomes, 850).addNewDrawnMutation(m124, asInteger(L * 0.27));
-sample(p6.genomes, 850).addNewDrawnMutation(m125, asInteger(L * 0.28));
-sample(p6.genomes, 850).addNewDrawnMutation(m126, asInteger(L * 0.29));
-sample(p6.genomes, 850).addNewDrawnMutation(m127, asInteger(L * 0.30));
-sample(p6.genomes, 850).addNewDrawnMutation(m128, asInteger(L * 0.31));
-sample(p6.genomes, 850).addNewDrawnMutation(m129, asInteger(L * 0.32));
-sample(p6.genomes, 850).addNewDrawnMutation(m130, asInteger(L * 0.33));
-sample(p6.genomes, 850).addNewDrawnMutation(m131, asInteger(L * 0.34));
-sample(p6.genomes, 850).addNewDrawnMutation(m132, asInteger(L * 0.35));
-sample(p6.genomes, 850).addNewDrawnMutation(m133, asInteger(L * 0.36));
-sample(p6.genomes, 850).addNewDrawnMutation(m134, asInteger(L * 0.37));
-sample(p6.genomes, 850).addNewDrawnMutation(m135, asInteger(L * 0.38));
-sample(p6.genomes, 850).addNewDrawnMutation(m136, asInteger(L * 0.39));
-sample(p6.genomes, 850).addNewDrawnMutation(m137, asInteger(L * 0.40));
-sample(p6.genomes, 850).addNewDrawnMutation(m138, asInteger(L * 0.41));
-sample(p6.genomes, 850).addNewDrawnMutation(m139, asInteger(L * 0.42));
-sample(p6.genomes, 850).addNewDrawnMutation(m140, asInteger(L * 0.43));
-sample(p6.genomes, 850).addNewDrawnMutation(m141, asInteger(L * 0.44));
-sample(p6.genomes, 850).addNewDrawnMutation(m142, asInteger(L * 0.45));
-sample(p6.genomes, 850).addNewDrawnMutation(m143, asInteger(L * 0.46));
-sample(p6.genomes, 850).addNewDrawnMutation(m144, asInteger(L * 0.47));
-sample(p6.genomes, 850).addNewDrawnMutation(m145, asInteger(L * 0.48));
+//SL
+sample(p6.genomes, asInteger(1000*0.898550725)).addNewDrawnMutation(m122, asInteger(L * 0.25));
+sample(p6.genomes, asInteger(1000*0.968253968)).addNewDrawnMutation(m123, asInteger(L * 0.26));
+sample(p6.genomes, asInteger(1000*0.964912281)).addNewDrawnMutation(m124, asInteger(L * 0.27));
+sample(p6.genomes, asInteger(1000*0.928994083)).addNewDrawnMutation(m125, asInteger(L * 0.28));
+sample(p6.genomes, asInteger(1000*0.951388889)).addNewDrawnMutation(m126, asInteger(L * 0.29));
+sample(p6.genomes, asInteger(1000*0.951219512)).addNewDrawnMutation(m127, asInteger(L * 0.30));
+sample(p6.genomes, asInteger(1000*0.778761062)).addNewDrawnMutation(m128, asInteger(L * 0.31));
+sample(p6.genomes, asInteger(1000*0.946666667)).addNewDrawnMutation(m129, asInteger(L * 0.32));
+sample(p6.genomes, asInteger(1000*0.944444444)).addNewDrawnMutation(m130, asInteger(L * 0.33));
+sample(p6.genomes, asInteger(1000*1)).addNewDrawnMutation(m131, asInteger(L * 0.34));
+sample(p6.genomes, asInteger(1000*1)).addNewDrawnMutation(m132, asInteger(L * 0.35));
+sample(p6.genomes, asInteger(1000*0.9007633588)).addNewDrawnMutation(m133, asInteger(L * 0.36));
+sample(p6.genomes, asInteger(1000*0.7777777778)).addNewDrawnMutation(m134, asInteger(L * 0.37));
+sample(p6.genomes, asInteger(1000*0.9099099099)).addNewDrawnMutation(m135, asInteger(L * 0.38));
+sample(p6.genomes, asInteger(1000*0.982758621)).addNewDrawnMutation(m136, asInteger(L * 0.39));
+sample(p6.genomes, asInteger(1000*0.857142857)).addNewDrawnMutation(m137, asInteger(L * 0.40));
+sample(p6.genomes, asInteger(1000*0.904347826)).addNewDrawnMutation(m138, asInteger(L * 0.41));
+sample(p6.genomes, asInteger(1000*0.684210526)).addNewDrawnMutation(m139, asInteger(L * 0.42));
+sample(p6.genomes, asInteger(1000*0.802816901)).addNewDrawnMutation(m140, asInteger(L * 0.43));
+sample(p6.genomes, asInteger(1000*0.922413793)).addNewDrawnMutation(m141, asInteger(L * 0.44));
+sample(p6.genomes, asInteger(1000*0.88372093)).addNewDrawnMutation(m142, asInteger(L * 0.45));
+sample(p6.genomes, asInteger(1000*0.759689922)).addNewDrawnMutation(m143, asInteger(L * 0.46));
+sample(p6.genomes, asInteger(1000*0.958333333)).addNewDrawnMutation(m144, asInteger(L * 0.47));
+sample(p6.genomes, asInteger(1000*0.794871795)).addNewDrawnMutation(m145, asInteger(L * 0.48));
 
 sample(p6.genomes, 1000).addNewDrawnMutation(m996, 10000);
 sample(p6.genomes, 1000).addNewDrawnMutation(m1000, 10000);
 
-
-sample(p7.genomes, 850).addNewDrawnMutation(m146, asInteger(L * 0.49));
-sample(p7.genomes, 850).addNewDrawnMutation(m147, asInteger(L * 0.50));
-sample(p7.genomes, 850).addNewDrawnMutation(m148, asInteger(L * 0.51));
-sample(p7.genomes, 850).addNewDrawnMutation(m149, asInteger(L * 0.52));
-sample(p7.genomes, 850).addNewDrawnMutation(m150, asInteger(L * 0.53));
-sample(p7.genomes, 850).addNewDrawnMutation(m151, asInteger(L * 0.54));
-sample(p7.genomes, 850).addNewDrawnMutation(m152, asInteger(L * 0.55));
-sample(p7.genomes, 850).addNewDrawnMutation(m153, asInteger(L * 0.56));
-sample(p7.genomes, 850).addNewDrawnMutation(m154, asInteger(L * 0.57));
-sample(p7.genomes, 850).addNewDrawnMutation(m155, asInteger(L * 0.58));
-sample(p7.genomes, 850).addNewDrawnMutation(m156, asInteger(L * 0.59));
-sample(p7.genomes, 850).addNewDrawnMutation(m157, asInteger(L * 0.60));
-sample(p7.genomes, 850).addNewDrawnMutation(m158, asInteger(L * 0.61));
-sample(p7.genomes, 850).addNewDrawnMutation(m159, asInteger(L * 0.62));
-sample(p7.genomes, 850).addNewDrawnMutation(m160, asInteger(L * 0.63));
-sample(p7.genomes, 850).addNewDrawnMutation(m161, asInteger(L * 0.64));
-sample(p7.genomes, 850).addNewDrawnMutation(m162, asInteger(L * 0.65));
-sample(p7.genomes, 850).addNewDrawnMutation(m163, asInteger(L * 0.66));
-sample(p7.genomes, 850).addNewDrawnMutation(m164, asInteger(L * 0.67));
-sample(p7.genomes, 850).addNewDrawnMutation(m165, asInteger(L * 0.68));
-sample(p7.genomes, 850).addNewDrawnMutation(m166, asInteger(L * 0.69));
-sample(p7.genomes, 850).addNewDrawnMutation(m167, asInteger(L * 0.70));
-sample(p7.genomes, 850).addNewDrawnMutation(m168, asInteger(L * 0.71));
-sample(p7.genomes, 850).addNewDrawnMutation(m169, asInteger(L * 0.72));
+//SR
+sample(p7.genomes, asInteger(1000*1)).addNewDrawnMutation(m146, asInteger(L * 0.49));
+sample(p7.genomes, asInteger(1000*1)).addNewDrawnMutation(m147, asInteger(L * 0.50));
+sample(p7.genomes, asInteger(1000*0.922535211)).addNewDrawnMutation(m148, asInteger(L * 0.51));
+sample(p7.genomes, asInteger(1000*0.778761062)).addNewDrawnMutation(m149, asInteger(L * 0.52));
+sample(p7.genomes, asInteger(1000*0.974576271)).addNewDrawnMutation(m150, asInteger(L * 0.53));
+sample(p7.genomes, asInteger(1000*0.927835052)).addNewDrawnMutation(m151, asInteger(L * 0.54));
+sample(p7.genomes, asInteger(1000*0.937007874)).addNewDrawnMutation(m152, asInteger(L * 0.55));
+sample(p7.genomes, asInteger(1000*0.936363636)).addNewDrawnMutation(m153, asInteger(L * 0.56));
+sample(p7.genomes, asInteger(1000*0.791208791)).addNewDrawnMutation(m154, asInteger(L * 0.57));
+sample(p7.genomes, asInteger(1000*1)).addNewDrawnMutation(m155, asInteger(L * 0.58));
+sample(p7.genomes, asInteger(1000*0.919191919)).addNewDrawnMutation(m156, asInteger(L * 0.59));
+sample(p7.genomes, asInteger(1000*0.836065574)).addNewDrawnMutation(m157, asInteger(L * 0.60));
+sample(p7.genomes, asInteger(1000*0.9609375)).addNewDrawnMutation(m158, asInteger(L * 0.61));
+sample(p7.genomes, asInteger(1000*0.945454545)).addNewDrawnMutation(m159, asInteger(L * 0.62));
+sample(p7.genomes, asInteger(1000*0.954545455)).addNewDrawnMutation(m160, asInteger(L * 0.63));
+sample(p7.genomes, asInteger(1000*0.780952381)).addNewDrawnMutation(m161, asInteger(L * 0.64));
+sample(p7.genomes, asInteger(1000*0.887931034)).addNewDrawnMutation(m162, asInteger(L * 0.65));
+sample(p7.genomes, asInteger(1000*0.716666667)).addNewDrawnMutation(m163, asInteger(L * 0.66));
+sample(p7.genomes, asInteger(1000*0.837606838)).addNewDrawnMutation(m164, asInteger(L * 0.67));
+sample(p7.genomes, asInteger(1000*0.954545455)).addNewDrawnMutation(m165, asInteger(L * 0.68));
+sample(p7.genomes, asInteger(1000*0.776923077)).addNewDrawnMutation(m166, asInteger(L * 0.69));
+sample(p7.genomes, asInteger(1000*1)).addNewDrawnMutation(m167, asInteger(L * 0.70));
+sample(p7.genomes, asInteger(1000*0.991869919)).addNewDrawnMutation(m168, asInteger(L * 0.71));
+sample(p7.genomes, asInteger(1000*0.848)).addNewDrawnMutation(m169, asInteger(L * 0.72));
 
 sample(p7.genomes, 1000).addNewDrawnMutation(m997, 10000);
 sample(p7.genomes, 1000).addNewDrawnMutation(m1000, 10000);
 
 
-sample(p8.genomes, 850).addNewDrawnMutation(m170, asInteger(L * 0.73));
-sample(p8.genomes, 850).addNewDrawnMutation(m171, asInteger(L * 0.74));
-sample(p8.genomes, 850).addNewDrawnMutation(m172, asInteger(L * 0.75));
-sample(p8.genomes, 850).addNewDrawnMutation(m173, asInteger(L * 0.76));
-sample(p8.genomes, 850).addNewDrawnMutation(m174, asInteger(L * 0.77));
-sample(p8.genomes, 850).addNewDrawnMutation(m175, asInteger(L * 0.78));
-sample(p8.genomes, 850).addNewDrawnMutation(m176, asInteger(L * 0.79));
-sample(p8.genomes, 850).addNewDrawnMutation(m177, asInteger(L * 0.80));
-sample(p8.genomes, 850).addNewDrawnMutation(m178, asInteger(L * 0.81));
-sample(p8.genomes, 850).addNewDrawnMutation(m179, asInteger(L * 0.82));
-sample(p8.genomes, 850).addNewDrawnMutation(m180, asInteger(L * 0.83));
-sample(p8.genomes, 850).addNewDrawnMutation(m181, asInteger(L * 0.84));
-sample(p8.genomes, 850).addNewDrawnMutation(m182, asInteger(L * 0.85));
-sample(p8.genomes, 850).addNewDrawnMutation(m183, asInteger(L * 0.86));
-sample(p8.genomes, 850).addNewDrawnMutation(m184, asInteger(L * 0.87));
-sample(p8.genomes, 850).addNewDrawnMutation(m185, asInteger(L * 0.88));
-sample(p8.genomes, 850).addNewDrawnMutation(m186, asInteger(L * 0.89));
-sample(p8.genomes, 850).addNewDrawnMutation(m187, asInteger(L * 0.90));
-sample(p8.genomes, 850).addNewDrawnMutation(m188, asInteger(L * 0.91));
-sample(p8.genomes, 850).addNewDrawnMutation(m189, asInteger(L * 0.92));
-sample(p8.genomes, 850).addNewDrawnMutation(m190, asInteger(L * 0.93));
-sample(p8.genomes, 850).addNewDrawnMutation(m191, asInteger(L * 0.94));
-sample(p8.genomes, 850).addNewDrawnMutation(m192, asInteger(L * 0.95));
-sample(p8.genomes, 850).addNewDrawnMutation(m193, asInteger(L * 0.96));
+//WK
+sample(p8.genomes, asInteger(1000*0.877192982)).addNewDrawnMutation(m170, asInteger(L * 0.73));
+sample(p8.genomes, asInteger(1000*0.714285714)).addNewDrawnMutation(m171, asInteger(L * 0.74));
+sample(p8.genomes, asInteger(1000*0.682539683)).addNewDrawnMutation(m172, asInteger(L * 0.75));
+sample(p8.genomes, asInteger(1000*0.954545455)).addNewDrawnMutation(m173, asInteger(L * 0.76));
+sample(p8.genomes, asInteger(1000*0.770642202)).addNewDrawnMutation(m174, asInteger(L * 0.77));
+sample(p8.genomes, asInteger(1000*0.948453608)).addNewDrawnMutation(m175, asInteger(L * 0.78));
+sample(p8.genomes, asInteger(1000*0.879310345)).addNewDrawnMutation(m176, asInteger(L * 0.79));
+sample(p8.genomes, asInteger(1000*0.815789474)).addNewDrawnMutation(m177, asInteger(L * 0.80));
+sample(p8.genomes, asInteger(1000*0.8)).addNewDrawnMutation(m178, asInteger(L * 0.81));
+sample(p8.genomes, asInteger(1000*0.881578947)).addNewDrawnMutation(m179, asInteger(L * 0.82));
+sample(p8.genomes, asInteger(1000*0.682352941)).addNewDrawnMutation(m180, asInteger(L * 0.83));
+sample(p8.genomes, asInteger(1000*0.75)).addNewDrawnMutation(m181, asInteger(L * 0.84));
+sample(p8.genomes, asInteger(1000*0.646341463)).addNewDrawnMutation(m182, asInteger(L * 0.85));
+sample(p8.genomes, asInteger(1000*0.638554217)).addNewDrawnMutation(m183, asInteger(L * 0.86));
+sample(p8.genomes, asInteger(1000*0.695652174)).addNewDrawnMutation(m184, asInteger(L * 0.87));
+sample(p8.genomes, asInteger(1000*0.81294964)).addNewDrawnMutation(m185, asInteger(L * 0.88));
+sample(p8.genomes, asInteger(1000*0.702702703)).addNewDrawnMutation(m186, asInteger(L * 0.89));
+sample(p8.genomes, asInteger(1000*1)).addNewDrawnMutation(m187, asInteger(L * 0.90));
+sample(p8.genomes, asInteger(1000*0.885245902)).addNewDrawnMutation(m188, asInteger(L * 0.91));
+sample(p8.genomes, asInteger(1000*0.869230769)).addNewDrawnMutation(m189, asInteger(L * 0.92));
+sample(p8.genomes, asInteger(1000*0.708737864)).addNewDrawnMutation(m190, asInteger(L * 0.93));
+sample(p8.genomes, asInteger(1000*0.98245614)).addNewDrawnMutation(m191, asInteger(L * 0.94));
+sample(p8.genomes, asInteger(1000*0.929292929)).addNewDrawnMutation(m192, asInteger(L * 0.95));
+sample(p8.genomes, asInteger(1000*0.652542373)).addNewDrawnMutation(m193, asInteger(L * 0.96));
 
 sample(p8.genomes, 1000).addNewDrawnMutation(m998, 10000);
 sample(p8.genomes, 1000).addNewDrawnMutation(m1000, 10000);
@@ -656,7 +664,7 @@ else
 
 
 50 late() {
- sim.treeSeqOutput("E:/git/SLiM_stickles/output/sticklebacks.trees");
+ sim.treeSeqOutput(paste(c("E:/git/SLiM_stickles/output/sticklebacks_",REP,".trees"), sep=""));
   p9g = p9.genomes;
 
  p1Total = sum(p9g.countOfMutationsOfType(m2)) + sum(p9g.countOfMutationsOfType(m3)) + sum(p9g.countOfMutationsOfType(m4)) + sum(p9g.countOfMutationsOfType(m5)) + sum(p9g.countOfMutationsOfType(m6)) + sum(p9g.countOfMutationsOfType(m7)) + sum(p9g.countOfMutationsOfType(m8)) + sum(p9g.countOfMutationsOfType(m9)) + sum(p9g.countOfMutationsOfType(m10)) + sum(p9g.countOfMutationsOfType(m11)) + sum(p9g.countOfMutationsOfType(m12)) + sum(p9g.countOfMutationsOfType(m13)) + sum(p9g.countOfMutationsOfType(m14)) + sum(p9g.countOfMutationsOfType(m15)) + sum(p9g.countOfMutationsOfType(m16)) + sum(p9g.countOfMutationsOfType(m17)) + sum(p9g.countOfMutationsOfType(m18)) + sum(p9g.countOfMutationsOfType(m19)) + sum(p9g.countOfMutationsOfType(m20)) + sum(p9g.countOfMutationsOfType(m21)) + sum(p9g.countOfMutationsOfType(m22)) + sum(p9g.countOfMutationsOfType(m23)) + sum(p9g.countOfMutationsOfType(m24)) + sum(p9g.countOfMutationsOfType(m25));
@@ -694,7 +702,7 @@ else
  catn("Fraction with p8 ancestry: " + p8TotalFraction);
 
 header = paste("X", ",", "P1AncestryProportion", ",", "P2AncestryProportion", ",", "P3AncestryProportion", ",", "P4AncestryProportion", ",", "P5AncestryProportion", ",", "P6AncestryProportion", ",", "P7AncestryProportion", ",", "P8AncestryProportion");
-writeFile("E:/git/SLiM_stickles/output/mut.csv", header);
+writeFile(paste(c("E:/git/SLiM_stickles/output/mut_",REP,".csv"), sep=""), header);
  count = 0;
  p1TrueAnFracTotal = 0;
  p2TrueAnFracTotal = 0;
@@ -760,7 +768,7 @@ for (i in p9.individuals)
       
 		
 		line = paste(count, ",", p1TrueAnFrac, ",", p2TrueAnFrac, ",", p3TrueAnFrac, ",", p4TrueAnFrac, ",", p5TrueAnFrac, ",", p6TrueAnFrac, ",", p7TrueAnFrac, ",", p8TrueAnFrac);
-		writeFile("E:/git/SLiM_stickles/output/mut.csv", line, append=T);
+		writeFile(paste(c("E:/git/SLiM_stickles/output/mut_",REP,".csv"), sep=""), line, append=T);
 		count = count + 1;
 
 	} 
