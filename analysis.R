@@ -2,8 +2,8 @@ library(ggplot2)
 
 generations <- 10
 
-ancestry_mut <- read.csv(file = paste0(getwd(), "/output/mut.csv"))
-ancestry_true <- read.csv(file = paste0(getwd(), "/output/sticklebacks_ancestryproportions.csv"))
+ancestry_mut <- read.csv(file = paste0(getwd(), "/output/mut_1.csv"))
+ancestry_true <- read.csv(file = paste0(getwd(), "/output/sticklebacks_ancestryproportions_1.csv"))
 
 
 corresult <- cor.test(ancestry_mut$P1AncestryProportion , ancestry_true$P1AncestryProportion)

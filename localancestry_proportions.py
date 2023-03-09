@@ -9,17 +9,18 @@ import numpy as np
 import pandas as pd
 import re
 import sys
+import tskit
 
 infile = sys.argv[1]
 outfile = re.search("(.*).trees", infile).group(1)
 
-ts = pyslim.load(infile)
+ts = tskit.load(infile)
 
 popA_nodes = ts.samples(population=1)
 popB_nodes = ts.samples(population=2)
 popC_nodes = ts.samples(population=3)
 popD_nodes = ts.samples(population=4)
-admix_inds = ts.individuals_alive_at(0, population=5)
+admix_inds = pyslim.individuals_alive_at(ts, 0, population=9)
 max_time = ts.max_root_time - 1
 
 def get_admixture_proportions(ts, admix_inds, popA_nodes, popB_nodes, popC_nodes, popD_nodes, max_time):
@@ -47,7 +48,7 @@ def get_admixture_proportions(ts, admix_inds, popA_nodes, popB_nodes, popC_nodes
 		proportions_Total.append((span_A + span_B + span_C + span_D)/(span_A + span_B + span_C + span_D))
 	ancestry_arr = np.stack((proportions_A, proportions_B, proportions_C, proportions_D), axis=-1)
 	ancestry_df = pd.DataFrame(ancestry_arr, columns=["P1AncestryProportion", "P2AncestryProportion", "P3AncestryProportion", "P4AncestryProportion"])
-	outname = f"{outfile}_ancestryproportions.csv"
+	outname = f"{outfile}.csv"
 	# save to csv file
 	ancestry_df.to_csv(outname)
 
