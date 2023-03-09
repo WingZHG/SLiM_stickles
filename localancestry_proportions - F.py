@@ -9,11 +9,12 @@ import numpy as np
 import pandas as pd
 import re
 import sys
+import tskit
 
 infile = sys.argv[1]
 outfile = re.search("(.*).trees", infile).group(1)
 
-ts = pyslim.load(infile)
+ts = tskit.load(infile)
 
 popA_nodes = ts.samples(population=1)
 popB_nodes = ts.samples(population=2)
@@ -23,7 +24,7 @@ popE_nodes = ts.samples(population=5)
 popF_nodes = ts.samples(population=6)
 popG_nodes = ts.samples(population=7)
 popH_nodes = ts.samples(population=8)
-admix_inds = ts.individuals_alive_at(0, population=9)
+admix_inds = pyslim.individuals_alive_at(ts, 0, population=9)
 max_time = ts.max_root_time - 1
 
 def get_admixture_proportions(ts, admix_inds, popA_nodes, popB_nodes, popC_nodes, popD_nodes, popE_nodes, popF_nodes, popG_nodes, popH_nodes, max_time):

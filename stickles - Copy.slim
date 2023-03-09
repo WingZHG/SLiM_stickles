@@ -1,5 +1,5 @@
 initialize() {
-// defineConstant("REP", 1);  // simulation replicate
+ //defineConstant("REP", i);  // simulation replicate
  defineConstant("L", 1e8); // 1e6 for testing - 1e8 for actual run
  initializeTreeSeq(); // ancestry tracking
  initializeMutationRate(0);
@@ -664,7 +664,7 @@ else
 
 
 50 late() {
- sim.treeSeqOutput(paste(c("E:/git/SLiM_stickles/output/sticklebacks_",REP,".trees"), sep=""));
+ sim.treeSeqOutput(paste(c("./output/sticklebacks_",REP,".trees"), sep=""));
   p9g = p9.genomes;
 
  p1Total = sum(p9g.countOfMutationsOfType(m2)) + sum(p9g.countOfMutationsOfType(m3)) + sum(p9g.countOfMutationsOfType(m4)) + sum(p9g.countOfMutationsOfType(m5)) + sum(p9g.countOfMutationsOfType(m6)) + sum(p9g.countOfMutationsOfType(m7)) + sum(p9g.countOfMutationsOfType(m8)) + sum(p9g.countOfMutationsOfType(m9)) + sum(p9g.countOfMutationsOfType(m10)) + sum(p9g.countOfMutationsOfType(m11)) + sum(p9g.countOfMutationsOfType(m12)) + sum(p9g.countOfMutationsOfType(m13)) + sum(p9g.countOfMutationsOfType(m14)) + sum(p9g.countOfMutationsOfType(m15)) + sum(p9g.countOfMutationsOfType(m16)) + sum(p9g.countOfMutationsOfType(m17)) + sum(p9g.countOfMutationsOfType(m18)) + sum(p9g.countOfMutationsOfType(m19)) + sum(p9g.countOfMutationsOfType(m20)) + sum(p9g.countOfMutationsOfType(m21)) + sum(p9g.countOfMutationsOfType(m22)) + sum(p9g.countOfMutationsOfType(m23)) + sum(p9g.countOfMutationsOfType(m24)) + sum(p9g.countOfMutationsOfType(m25));
@@ -685,24 +685,24 @@ else
  
  maxTotal = p1Total + p2Total + p3Total + p4Total + p5Total + p6Total + p7Total + p8Total;
  p1TotalFraction = p1Total / maxTotal;
- catn("Fraction with p1 ancestry: " + p1TotalFraction);
+ //catn("Fraction with p1 ancestry: " + p1TotalFraction);
  p2TotalFraction = p2Total / maxTotal;
- catn("Fraction with p2 ancestry: " + p2TotalFraction);
+ //catn("Fraction with p2 ancestry: " + p2TotalFraction);
  p3TotalFraction = p3Total / maxTotal;
- catn("Fraction with p3 ancestry: " + p3TotalFraction);
+ //catn("Fraction with p3 ancestry: " + p3TotalFraction);
  p4TotalFraction = p4Total / maxTotal;
- catn("Fraction with p4 ancestry: " + p4TotalFraction);
+ //catn("Fraction with p4 ancestry: " + p4TotalFraction);
  p5TotalFraction = p5Total / maxTotal;
- catn("Fraction with p5 ancestry: " + p5TotalFraction);
+ //catn("Fraction with p5 ancestry: " + p5TotalFraction);
  p6TotalFraction = p6Total / maxTotal;
- catn("Fraction with p6 ancestry: " + p6TotalFraction);
+ //catn("Fraction with p6 ancestry: " + p6TotalFraction);
  p7TotalFraction = p7Total / maxTotal;
- catn("Fraction with p7 ancestry: " + p7TotalFraction);
+ //catn("Fraction with p7 ancestry: " + p7TotalFraction);
  p8TotalFraction = p8Total / maxTotal;
- catn("Fraction with p8 ancestry: " + p8TotalFraction);
+ //catn("Fraction with p8 ancestry: " + p8TotalFraction);
 
 header = paste("X", ",", "P1AncestryProportion", ",", "P2AncestryProportion", ",", "P3AncestryProportion", ",", "P4AncestryProportion", ",", "P5AncestryProportion", ",", "P6AncestryProportion", ",", "P7AncestryProportion", ",", "P8AncestryProportion");
-writeFile(paste(c("E:/git/SLiM_stickles/output/mut_",REP,".csv"), sep=""), header);
+writeFile(paste(c("./output/mut_",REP,".csv"), sep=""), header);
  count = 0;
  p1TrueAnFracTotal = 0;
  p2TrueAnFracTotal = 0;
@@ -741,7 +741,7 @@ for (i in p9.individuals)
 		p8TrueAn = i.countOfMutationsOfType(m170) + i.countOfMutationsOfType(m171) + i.countOfMutationsOfType(m172) + i.countOfMutationsOfType(m173) + i.countOfMutationsOfType(m174) + i.countOfMutationsOfType(m175) + i.countOfMutationsOfType(m176) + i.countOfMutationsOfType(m177) + i.countOfMutationsOfType(m178) + i.countOfMutationsOfType(m179) + i.countOfMutationsOfType(m182) + i.countOfMutationsOfType(m181) + i.countOfMutationsOfType(m182) + i.countOfMutationsOfType(m183) + i.countOfMutationsOfType(m184) + i.countOfMutationsOfType(m185) + i.countOfMutationsOfType(m186) + i.countOfMutationsOfType(m187) + i.countOfMutationsOfType(m188) + i.countOfMutationsOfType(m189) + i.countOfMutationsOfType(m190) + i.countOfMutationsOfType(m191) + i.countOfMutationsOfType(m192) + i.countOfMutationsOfType(m193);
 		p8TrueAnFrac = p8TrueAn / TrueAnTot;
 		
-		catn(p1TrueAnFrac	+ "	" + p2TrueAnFrac + "	" + p3TrueAnFrac + "	" + p4TrueAnFrac + "	" + p5TrueAnFrac	+ "	" + p6TrueAnFrac + "	" + p7TrueAnFrac + "	" + p8TrueAnFrac);
+		//catn(p1TrueAnFrac	+ "	" + p2TrueAnFrac + "	" + p3TrueAnFrac + "	" + p4TrueAnFrac + "	" + p5TrueAnFrac	+ "	" + p6TrueAnFrac + "	" + p7TrueAnFrac + "	" + p8TrueAnFrac);
       if (p1TrueAnFrac > 0.3)
       p1TrueAnFracTotal = p1TrueAnFracTotal + 1;
 
@@ -768,18 +768,18 @@ for (i in p9.individuals)
       
 		
 		line = paste(count, ",", p1TrueAnFrac, ",", p2TrueAnFrac, ",", p3TrueAnFrac, ",", p4TrueAnFrac, ",", p5TrueAnFrac, ",", p6TrueAnFrac, ",", p7TrueAnFrac, ",", p8TrueAnFrac);
-		writeFile(paste(c("E:/git/SLiM_stickles/output/mut_",REP,".csv"), sep=""), line, append=T);
+		writeFile(paste(c("./output/mut_",REP,".csv"), sep=""), line, append=T);
 		count = count + 1;
 
 	} 
-print(p1TrueAnFracTotal);
-print(p2TrueAnFracTotal);
-print(p3TrueAnFracTotal);
-print(p4TrueAnFracTotal); 
-print(p5TrueAnFracTotal);
-print(p6TrueAnFracTotal);
-print(p7TrueAnFracTotal);
-print(p8TrueAnFracTotal); 
-print(p1TrueAnFracTotal + p2TrueAnFracTotal + p3TrueAnFracTotal + p4TrueAnFracTotal + p5TrueAnFracTotal + p6TrueAnFracTotal + p7TrueAnFracTotal + p8TrueAnFracTotal);
+//print(p1TrueAnFracTotal);
+//print(p2TrueAnFracTotal);
+//print(p3TrueAnFracTotal);
+//print(p4TrueAnFracTotal); 
+//print(p5TrueAnFracTotal);
+//print(p6TrueAnFracTotal);
+//print(p7TrueAnFracTotal);
+//print(p8TrueAnFracTotal); 
+//print(p1TrueAnFracTotal + p2TrueAnFracTotal + p3TrueAnFracTotal + p4TrueAnFracTotal + p5TrueAnFracTotal + p6TrueAnFracTotal + p7TrueAnFracTotal + p8TrueAnFracTotal);
  sim.simulationFinished();
 } 
