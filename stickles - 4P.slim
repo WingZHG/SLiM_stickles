@@ -1,0 +1,364 @@
+initialize() {
+ //defineConstant("REP", i);  // simulation replicate
+ defineConstant("L", 1e8); // 1e6 for testing - 1e8 for actual run
+ initializeTreeSeq(); // ancestry tracking
+ initializeMutationRate(0);
+ initializeMutationType("m1", 0.5, "f", 0.1);
+ initializeMutationType("m991", 0.5, "f", 0.0);
+ initializeMutationType("m992", 0.5, "f", 0.0);
+ initializeMutationType("m993", 0.5, "f", 0.0);
+ initializeMutationType("m994", 0.5, "f", 0.0);
+ initializeMutationType("m995", 0.5, "f", 0.0);
+ initializeMutationType("m996", 0.5, "f", 0.0);
+ initializeMutationType("m997", 0.5, "f", 0.0);
+ initializeMutationType("m998", 0.5, "f", 0.0);
+ initializeMutationType("m999", 0.5, "f", 0.0);
+ initializeMutationType("m1000", 0.5, "f", 0.0);
+
+// p1 marker
+ initializeMutationType("m2", 0.5, "f", 0.0); 
+ initializeMutationType("m3", 0.5, "f", 0.0); 
+ initializeMutationType("m4", 0.5, "f", 0.0); 
+ initializeMutationType("m5", 0.5, "f", 0.0); 
+ initializeMutationType("m6", 0.5, "f", 0.0); 
+ initializeMutationType("m7", 0.5, "f", 0.0); 
+ initializeMutationType("m8", 0.5, "f", 0.0); 
+ initializeMutationType("m9", 0.5, "f", 0.0); 
+ initializeMutationType("m10", 0.5, "f", 0.0); 
+ initializeMutationType("m11", 0.5, "f", 0.0); 
+ initializeMutationType("m12", 0.5, "f", 0.0);
+ initializeMutationType("m13", 0.5, "f", 0.0);
+ initializeMutationType("m14", 0.5, "f", 0.0);
+ initializeMutationType("m15", 0.5, "f", 0.0);
+ initializeMutationType("m16", 0.5, "f", 0.0);
+ initializeMutationType("m17", 0.5, "f", 0.0);
+ initializeMutationType("m18", 0.5, "f", 0.0);
+ initializeMutationType("m19", 0.5, "f", 0.0);
+ initializeMutationType("m20", 0.5, "f", 0.0);
+ initializeMutationType("m21", 0.5, "f", 0.0);
+ initializeMutationType("m22", 0.5, "f", 0.0);
+ initializeMutationType("m23", 0.5, "f", 0.0);
+ initializeMutationType("m24", 0.5, "f", 0.0);
+ initializeMutationType("m25", 0.5, "f", 0.0);
+ 
+// p2 marker
+ initializeMutationType("m26", 0.5, "f", 0.0); 
+ initializeMutationType("m27", 0.5, "f", 0.0); 
+ initializeMutationType("m28", 0.5, "f", 0.0); 
+ initializeMutationType("m29", 0.5, "f", 0.0); 
+ initializeMutationType("m30", 0.5, "f", 0.0); 
+ initializeMutationType("m31", 0.5, "f", 0.0); 
+ initializeMutationType("m32", 0.5, "f", 0.0);
+ initializeMutationType("m33", 0.5, "f", 0.0);
+ initializeMutationType("m34", 0.5, "f", 0.0);
+ initializeMutationType("m35", 0.5, "f", 0.0);
+ initializeMutationType("m36", 0.5, "f", 0.0);
+ initializeMutationType("m37", 0.5, "f", 0.0);
+ initializeMutationType("m38", 0.5, "f", 0.0);
+ initializeMutationType("m39", 0.5, "f", 0.0);
+ initializeMutationType("m40", 0.5, "f", 0.0);
+ initializeMutationType("m41", 0.5, "f", 0.0);
+ initializeMutationType("m42", 0.5, "f", 0.0);
+ initializeMutationType("m43", 0.5, "f", 0.0);
+ initializeMutationType("m44", 0.5, "f", 0.0);
+ initializeMutationType("m45", 0.5, "f", 0.0);
+ initializeMutationType("m46", 0.5, "f", 0.0);
+ initializeMutationType("m47", 0.5, "f", 0.0);
+ initializeMutationType("m48", 0.5, "f", 0.0);
+ initializeMutationType("m49", 0.5, "f", 0.0);
+
+// p3 marker
+ initializeMutationType("m50", 0.5, "f", 0.0); 
+ initializeMutationType("m51", 0.5, "f", 0.0); 
+ initializeMutationType("m52", 0.5, "f", 0.0); 
+ initializeMutationType("m53", 0.5, "f", 0.0); 
+ initializeMutationType("m54", 0.5, "f", 0.0); 
+ initializeMutationType("m55", 0.5, "f", 0.0); 
+ initializeMutationType("m56", 0.5, "f", 0.0); 
+ initializeMutationType("m57", 0.5, "f", 0.0); 
+ initializeMutationType("m58", 0.5, "f", 0.0); 
+ initializeMutationType("m59", 0.5, "f", 0.0); 
+ initializeMutationType("m60", 0.5, "f", 0.0); 
+ initializeMutationType("m61", 0.5, "f", 0.0); 
+ initializeMutationType("m62", 0.5, "f", 0.0);
+ initializeMutationType("m63", 0.5, "f", 0.0);
+ initializeMutationType("m64", 0.5, "f", 0.0);
+ initializeMutationType("m65", 0.5, "f", 0.0);
+ initializeMutationType("m66", 0.5, "f", 0.0);
+ initializeMutationType("m67", 0.5, "f", 0.0);
+ initializeMutationType("m68", 0.5, "f", 0.0);
+ initializeMutationType("m69", 0.5, "f", 0.0);
+ initializeMutationType("m70", 0.5, "f", 0.0);
+ initializeMutationType("m71", 0.5, "f", 0.0);
+ initializeMutationType("m72", 0.5, "f", 0.0);
+ initializeMutationType("m73", 0.5, "f", 0.0);
+
+// p4 marker
+ initializeMutationType("m74", 0.5, "f", 0.0); 
+ initializeMutationType("m75", 0.5, "f", 0.0); 
+ initializeMutationType("m76", 0.5, "f", 0.0); 
+ initializeMutationType("m77", 0.5, "f", 0.0); 
+ initializeMutationType("m78", 0.5, "f", 0.0); 
+ initializeMutationType("m79", 0.5, "f", 0.0); 
+ initializeMutationType("m80", 0.5, "f", 0.0); 
+ initializeMutationType("m81", 0.5, "f", 0.0); 
+ initializeMutationType("m82", 0.5, "f", 0.0);
+ initializeMutationType("m83", 0.5, "f", 0.0);
+ initializeMutationType("m84", 0.5, "f", 0.0);
+ initializeMutationType("m85", 0.5, "f", 0.0);
+ initializeMutationType("m86", 0.5, "f", 0.0);
+ initializeMutationType("m87", 0.5, "f", 0.0);
+ initializeMutationType("m88", 0.5, "f", 0.0);
+ initializeMutationType("m89", 0.5, "f", 0.0);
+ initializeMutationType("m90", 0.5, "f", 0.0);
+ initializeMutationType("m91", 0.5, "f", 0.0);
+ initializeMutationType("m92", 0.5, "f", 0.0);
+ initializeMutationType("m93", 0.5, "f", 0.0);
+ initializeMutationType("m94", 0.5, "f", 0.0);
+ initializeMutationType("m95", 0.5, "f", 0.0);
+ initializeMutationType("m96", 0.5, "f", 0.0);
+ initializeMutationType("m97", 0.5, "f", 0.0);
+ 
+ 
+
+
+ initializeGenomicElementType("g1", m1, 1.0);
+ initializeGenomicElement(g1, 0, L-1);
+ initializeRecombinationRate(1e-8);
+}
+
+// 8 source population
+1 late() {
+sim.addSubpop("p1", 1000);
+sim.addSubpop("p2", 1000);
+sim.addSubpop("p3", 1000);
+sim.addSubpop("p4", 1000);
+
+// introduce tracker mutation/SNP
+// Benthic
+
+//FG
+sample(p1.genomes, asInteger(1000*0.661538462)).addNewDrawnMutation(m2, asInteger(L * 0.01));
+sample(p1.genomes, asInteger(1000*0.775193798)).addNewDrawnMutation(m3, asInteger(L * 0.02));
+sample(p1.genomes, asInteger(1000*0.764705882)).addNewDrawnMutation(m4, asInteger(L * 0.03));
+sample(p1.genomes, asInteger(1000*0.737704918)).addNewDrawnMutation(m5, asInteger(L * 0.04));
+sample(p1.genomes, asInteger(1000*0.648148148)).addNewDrawnMutation(m6, asInteger(L * 0.05));
+sample(p1.genomes, asInteger(1000*0.744680851)).addNewDrawnMutation(m7, asInteger(L * 0.06));
+sample(p1.genomes, asInteger(1000*0.774647887)).addNewDrawnMutation(m8, asInteger(L * 0.07));
+sample(p1.genomes, asInteger(1000*0.609271523)).addNewDrawnMutation(m9, asInteger(L * 0.08));
+sample(p1.genomes, asInteger(1000*0.617977528)).addNewDrawnMutation(m10, asInteger(L * 0.09));
+sample(p1.genomes, asInteger(1000*0.813953488)).addNewDrawnMutation(m11, asInteger(L * 0.10));
+sample(p1.genomes, asInteger(1000*0.584337349)).addNewDrawnMutation(m12, asInteger(L * 0.11));
+sample(p1.genomes, asInteger(1000*0.527777778)).addNewDrawnMutation(m13, asInteger(L * 0.12));
+sample(p1.genomes, asInteger(1000*0.583333333)).addNewDrawnMutation(m14, asInteger(L * 0.13));
+sample(p1.genomes, asInteger(1000*0.533783784)).addNewDrawnMutation(m15, asInteger(L * 0.14));
+sample(p1.genomes, asInteger(1000*0.664233577)).addNewDrawnMutation(m16, asInteger(L * 0.15));
+sample(p1.genomes, asInteger(1000*0.931818182)).addNewDrawnMutation(m17, asInteger(L * 0.16));
+sample(p1.genomes, asInteger(1000*0.796875)).addNewDrawnMutation(m18, asInteger(L * 0.17));
+sample(p1.genomes, asInteger(1000*0.701754386)).addNewDrawnMutation(m19, asInteger(L * 0.18));
+sample(p1.genomes, asInteger(1000*0.6875)).addNewDrawnMutation(m20, asInteger(L * 0.19));
+sample(p1.genomes, asInteger(1000*0.85)).addNewDrawnMutation(m21, asInteger(L * 0.20));
+sample(p1.genomes, asInteger(1000*0.780701754)).addNewDrawnMutation(m22, asInteger(L * 0.21));
+sample(p1.genomes, asInteger(1000*0.86407767)).addNewDrawnMutation(m23, asInteger(L * 0.22));
+sample(p1.genomes, asInteger(1000*0.763888889)).addNewDrawnMutation(m24, asInteger(L * 0.23));
+sample(p1.genomes, asInteger(1000*0.494623656)).addNewDrawnMutation(m25, asInteger(L * 0.24));
+
+sample(p1.genomes, 1000).addNewDrawnMutation(m991, 10000);
+sample(p1.genomes, 1000).addNewDrawnMutation(m999, 10000);
+
+//TL
+sample(p2.genomes, 1000).addNewDrawnMutation(m26, asInteger(L * 0.25));
+sample(p2.genomes, 1000).addNewDrawnMutation(m27, asInteger(L * 0.26));
+sample(p2.genomes, 1000).addNewDrawnMutation(m28, asInteger(L * 0.27));
+sample(p2.genomes, 1000).addNewDrawnMutation(m29, asInteger(L * 0.28));
+sample(p2.genomes, 1000).addNewDrawnMutation(m30, asInteger(L * 0.29));
+sample(p2.genomes, 1000).addNewDrawnMutation(m31, asInteger(L * 0.30));
+sample(p2.genomes, 1000).addNewDrawnMutation(m32, asInteger(L * 0.31));
+sample(p2.genomes, 1000).addNewDrawnMutation(m33, asInteger(L * 0.32));
+sample(p2.genomes, 1000).addNewDrawnMutation(m34, asInteger(L * 0.33));
+sample(p2.genomes, 1000).addNewDrawnMutation(m35, asInteger(L * 0.34));
+sample(p2.genomes, 1000).addNewDrawnMutation(m36, asInteger(L * 0.35));
+sample(p2.genomes, 1000).addNewDrawnMutation(m37, asInteger(L * 0.36));
+sample(p2.genomes, asInteger(1000*0.97826087)).addNewDrawnMutation(m38, asInteger(L * 0.37));
+sample(p2.genomes, asInteger(1000*0.993710692)).addNewDrawnMutation(m39, asInteger(L * 0.38));
+sample(p2.genomes, 1000).addNewDrawnMutation(m40, asInteger(L * 0.39));
+sample(p2.genomes, 1000).addNewDrawnMutation(m41, asInteger(L * 0.40));
+sample(p2.genomes, 1000).addNewDrawnMutation(m42, asInteger(L * 0.41));
+sample(p2.genomes, asInteger(1000*0.9875)).addNewDrawnMutation(m43, asInteger(L * 0.42));
+sample(p2.genomes, 1000).addNewDrawnMutation(m44, asInteger(L * 0.43));
+sample(p2.genomes, 1000).addNewDrawnMutation(m45, asInteger(L * 0.44));
+sample(p2.genomes, 1000).addNewDrawnMutation(m46, asInteger(L * 0.45));
+sample(p2.genomes, asInteger(1000*0.989795918)).addNewDrawnMutation(m47, asInteger(L * 0.46));
+sample(p2.genomes, 1000).addNewDrawnMutation(m48, asInteger(L * 0.47));
+sample(p2.genomes, asInteger(1000*0.985074627)).addNewDrawnMutation(m49, asInteger(L * 0.48));
+
+sample(p2.genomes, 1000).addNewDrawnMutation(m992, 10000);
+sample(p2.genomes, 1000).addNewDrawnMutation(m999, 10000);
+
+
+//WB
+sample(p3.genomes, asInteger(1000*0.684210526)).addNewDrawnMutation(m50, asInteger(L * 0.49));
+sample(p3.genomes, asInteger(1000*0.695652174)).addNewDrawnMutation(m51, asInteger(L * 0.50));
+sample(p3.genomes, asInteger(1000*0.669811321)).addNewDrawnMutation(m52, asInteger(L * 0.51));
+sample(p3.genomes, asInteger(1000*0.894736842)).addNewDrawnMutation(m53, asInteger(L * 0.52));
+sample(p3.genomes, asInteger(1000*0.91588785)).addNewDrawnMutation(m54, asInteger(L * 0.53));
+sample(p3.genomes, asInteger(1000*0.908256881)).addNewDrawnMutation(m55, asInteger(L * 0.54));
+sample(p3.genomes, asInteger(1000*0.617647059)).addNewDrawnMutation(m56, asInteger(L * 0.55));
+sample(p3.genomes, asInteger(1000*0.705128205)).addNewDrawnMutation(m57, asInteger(L * 0.56));
+sample(p3.genomes, asInteger(1000*0.8)).addNewDrawnMutation(m58, asInteger(L * 0.57));
+sample(p3.genomes, asInteger(1000*0.626506024)).addNewDrawnMutation(m59, asInteger(L * 0.58));
+sample(p3.genomes, asInteger(1000*0.634920635)).addNewDrawnMutation(m60, asInteger(L * 0.59));
+sample(p3.genomes, asInteger(1000*0.838383838)).addNewDrawnMutation(m61, asInteger(L * 0.60));
+sample(p3.genomes, asInteger(1000*0.848837209)).addNewDrawnMutation(m62, asInteger(L * 0.61));
+sample(p3.genomes, asInteger(1000*0.804878049)).addNewDrawnMutation(m63, asInteger(L * 0.62));
+sample(p3.genomes, asInteger(1000*0.641025641)).addNewDrawnMutation(m64, asInteger(L * 0.63));
+sample(p3.genomes, asInteger(1000*0.610526316)).addNewDrawnMutation(m65, asInteger(L * 0.64));
+sample(p3.genomes, asInteger(1000*0.631578947)).addNewDrawnMutation(m66, asInteger(L * 0.65));
+sample(p3.genomes, asInteger(1000*0.925)).addNewDrawnMutation(m67, asInteger(L * 0.66));
+sample(p3.genomes, asInteger(1000*0.673076923)).addNewDrawnMutation(m68, asInteger(L * 0.67));
+sample(p3.genomes, asInteger(1000*0.908256881)).addNewDrawnMutation(m69, asInteger(L * 0.68));
+sample(p3.genomes, asInteger(1000*0.896907216)).addNewDrawnMutation(m70, asInteger(L * 0.69));
+sample(p3.genomes, asInteger(1000*0.9)).addNewDrawnMutation(m71, asInteger(L * 0.70));
+sample(p3.genomes, asInteger(1000*0.897058824)).addNewDrawnMutation(m72, asInteger(L * 0.71));
+sample(p3.genomes, asInteger(1000*0.843478261)).addNewDrawnMutation(m73, asInteger(L * 0.72));
+
+sample(p3.genomes, 1000).addNewDrawnMutation(m993, 10000);
+sample(p3.genomes, 1000).addNewDrawnMutation(m999, 10000);
+
+
+//WT
+sample(p4.genomes, asInteger(1000*0.741935484)).addNewDrawnMutation(m74, asInteger(L * 0.73));
+sample(p4.genomes, asInteger(1000*0.723076923)).addNewDrawnMutation(m75, asInteger(L * 0.74));
+sample(p4.genomes, asInteger(1000*0.693181818)).addNewDrawnMutation(m76, asInteger(L * 0.75));
+sample(p4.genomes, asInteger(1000*0.736842105)).addNewDrawnMutation(m77, asInteger(L * 0.76));
+sample(p4.genomes, asInteger(1000*0.72)).addNewDrawnMutation(m78, asInteger(L * 0.77));
+sample(p4.genomes, asInteger(1000*0.61627907)).addNewDrawnMutation(m79, asInteger(L * 0.78));
+sample(p4.genomes, asInteger(1000*0.675925926)).addNewDrawnMutation(m80, asInteger(L * 0.79));
+sample(p4.genomes, asInteger(1000*0.567164179)).addNewDrawnMutation(m81, asInteger(L * 0.80));
+sample(p4.genomes, asInteger(1000*0.660714286)).addNewDrawnMutation(m82, asInteger(L * 0.81));
+sample(p4.genomes, asInteger(1000*0.789473684)).addNewDrawnMutation(m83, asInteger(L * 0.82));
+sample(p4.genomes, asInteger(1000*0.775641026)).addNewDrawnMutation(m84, asInteger(L * 0.83));
+sample(p4.genomes, asInteger(1000*0.820895522)).addNewDrawnMutation(m85, asInteger(L * 0.84));
+sample(p4.genomes, asInteger(1000*0.81512605)).addNewDrawnMutation(m86, asInteger(L * 0.85));
+sample(p4.genomes, asInteger(1000*0.784615385)).addNewDrawnMutation(m87, asInteger(L * 0.86));
+sample(p4.genomes, asInteger(1000*0.733870968)).addNewDrawnMutation(m88, asInteger(L * 0.87));
+sample(p4.genomes, asInteger(1000*0.705882353)).addNewDrawnMutation(m89, asInteger(L * 0.88));
+sample(p4.genomes, asInteger(1000*0.701149425)).addNewDrawnMutation(m90, asInteger(L * 0.89));
+sample(p4.genomes, asInteger(1000*0.582089552)).addNewDrawnMutation(m91, asInteger(L * 0.90));
+sample(p4.genomes, asInteger(1000*0.571428571)).addNewDrawnMutation(m92, asInteger(L * 0.91));
+sample(p4.genomes, asInteger(1000*0.642105263)).addNewDrawnMutation(m93, asInteger(L * 0.92));
+sample(p4.genomes, asInteger(1000*0.533333333)).addNewDrawnMutation(m94, asInteger(L * 0.93));
+sample(p4.genomes, asInteger(1000*0.519083969)).addNewDrawnMutation(m95, asInteger(L * 0.94));
+sample(p4.genomes, asInteger(1000*0.752)).addNewDrawnMutation(m96, asInteger(L * 0.95));
+sample(p4.genomes, asInteger(1000*0.588652482)).addNewDrawnMutation(m97, asInteger(L * 0.96));
+
+sample(p4.genomes, 1000).addNewDrawnMutation(m994, 10000);
+sample(p4.genomes, 1000).addNewDrawnMutation(m999, 10000);
+
+
+ // no substitution when reaching fixation 
+for (m in sim.mutations.mutationType)
+	{
+	m.convertToSubstitution = F;
+	}
+
+sim.treeSeqRememberIndividuals(sim.subpopulations.individuals); // ancestry tracking
+
+
+sim.addSubpop("p9", 1000); // add merged population
+p9.setMigrationRates(c(p1, p2, p3, p4), c(0.25, 0.25, 0.25, 0.25)); // introduce individuals from source population into merged population
+}
+
+2 late() {
+p9.setMigrationRates(c(p1, p2, p3, p4), c(0.0, 0.0, 0.0, 0.0)); // stop adding individuals into merged population
+// remove source populations
+p1.setSubpopulationSize(0);
+p2.setSubpopulationSize(0);
+p3.setSubpopulationSize(0);
+p4.setSubpopulationSize(0);
+}
+
+2: late() {
+// tag all individuals with their m2 mutation count
+inds1 = sim.subpopulations.individuals;
+inds1.tag = inds1.countOfMutationsOfType(m992);
+}
+
+50 late() {
+ sim.treeSeqOutput(paste(c("./output/sticklebacks_",REP,".trees"), sep=""));
+  p9g = p9.genomes;
+
+ p1Total = sum(p9g.countOfMutationsOfType(m2)) + sum(p9g.countOfMutationsOfType(m3)) + sum(p9g.countOfMutationsOfType(m4)) + sum(p9g.countOfMutationsOfType(m5)) + sum(p9g.countOfMutationsOfType(m6)) + sum(p9g.countOfMutationsOfType(m7)) + sum(p9g.countOfMutationsOfType(m8)) + sum(p9g.countOfMutationsOfType(m9)) + sum(p9g.countOfMutationsOfType(m10)) + sum(p9g.countOfMutationsOfType(m11)) + sum(p9g.countOfMutationsOfType(m12)) + sum(p9g.countOfMutationsOfType(m13)) + sum(p9g.countOfMutationsOfType(m14)) + sum(p9g.countOfMutationsOfType(m15)) + sum(p9g.countOfMutationsOfType(m16)) + sum(p9g.countOfMutationsOfType(m17)) + sum(p9g.countOfMutationsOfType(m18)) + sum(p9g.countOfMutationsOfType(m19)) + sum(p9g.countOfMutationsOfType(m20)) + sum(p9g.countOfMutationsOfType(m21)) + sum(p9g.countOfMutationsOfType(m22)) + sum(p9g.countOfMutationsOfType(m23)) + sum(p9g.countOfMutationsOfType(m24)) + sum(p9g.countOfMutationsOfType(m25));
+
+ p2Total = sum(p9g.countOfMutationsOfType(m26)) + sum(p9g.countOfMutationsOfType(m27)) + sum(p9g.countOfMutationsOfType(m28)) + sum(p9g.countOfMutationsOfType(m29)) + sum(p9g.countOfMutationsOfType(m30)) + sum(p9g.countOfMutationsOfType(m31)) + sum(p9g.countOfMutationsOfType(m32)) + sum(p9g.countOfMutationsOfType(m33)) + sum(p9g.countOfMutationsOfType(m34)) + sum(p9g.countOfMutationsOfType(m35)) + sum(p9g.countOfMutationsOfType(m36)) + sum(p9g.countOfMutationsOfType(m37)) + sum(p9g.countOfMutationsOfType(m38)) + sum(p9g.countOfMutationsOfType(m39)) + sum(p9g.countOfMutationsOfType(m40)) + sum(p9g.countOfMutationsOfType(m41)) + sum(p9g.countOfMutationsOfType(m42)) + sum(p9g.countOfMutationsOfType(m43)) + sum(p9g.countOfMutationsOfType(m44)) + sum(p9g.countOfMutationsOfType(m45)) + sum(p9g.countOfMutationsOfType(m46)) + sum(p9g.countOfMutationsOfType(m47)) + sum(p9g.countOfMutationsOfType(m48)) + sum(p9g.countOfMutationsOfType(m49));
+ 
+ p3Total = sum(p9g.countOfMutationsOfType(m50)) + sum(p9g.countOfMutationsOfType(m51)) + sum(p9g.countOfMutationsOfType(m52)) + sum(p9g.countOfMutationsOfType(m53)) + sum(p9g.countOfMutationsOfType(m54)) + sum(p9g.countOfMutationsOfType(m55)) + sum(p9g.countOfMutationsOfType(m56)) + sum(p9g.countOfMutationsOfType(m57)) + sum(p9g.countOfMutationsOfType(m58)) + sum(p9g.countOfMutationsOfType(m59)) + sum(p9g.countOfMutationsOfType(m60)) + sum(p9g.countOfMutationsOfType(m61)) + sum(p9g.countOfMutationsOfType(m62)) + sum(p9g.countOfMutationsOfType(m63)) + sum(p9g.countOfMutationsOfType(m64)) + sum(p9g.countOfMutationsOfType(m65)) + sum(p9g.countOfMutationsOfType(m66)) + sum(p9g.countOfMutationsOfType(m67)) + sum(p9g.countOfMutationsOfType(m68)) + sum(p9g.countOfMutationsOfType(m69)) + sum(p9g.countOfMutationsOfType(m70)) + sum(p9g.countOfMutationsOfType(m71)) + sum(p9g.countOfMutationsOfType(m72)) + sum(p9g.countOfMutationsOfType(m73));
+ 
+ p4Total = sum(p9g.countOfMutationsOfType(m74)) + sum(p9g.countOfMutationsOfType(m75)) + sum(p9g.countOfMutationsOfType(m7)) + sum(p9g.countOfMutationsOfType(m77)) + sum(p9g.countOfMutationsOfType(m78)) + sum(p9g.countOfMutationsOfType(m79)) + sum(p9g.countOfMutationsOfType(m80)) + sum(p9g.countOfMutationsOfType(m81)) + sum(p9g.countOfMutationsOfType(m82)) + sum(p9g.countOfMutationsOfType(m83)) + sum(p9g.countOfMutationsOfType(m84)) + sum(p9g.countOfMutationsOfType(m85)) + sum(p9g.countOfMutationsOfType(m86)) + sum(p9g.countOfMutationsOfType(m87)) + sum(p9g.countOfMutationsOfType(m88)) + sum(p9g.countOfMutationsOfType(m89)) + sum(p9g.countOfMutationsOfType(m90)) + sum(p9g.countOfMutationsOfType(m91)) + sum(p9g.countOfMutationsOfType(m92)) + sum(p9g.countOfMutationsOfType(m93)) + sum(p9g.countOfMutationsOfType(m94)) + sum(p9g.countOfMutationsOfType(m95)) + sum(p9g.countOfMutationsOfType(m96)) + sum(p9g.countOfMutationsOfType(m97));
+
+ 
+ maxTotal = p1Total + p2Total + p3Total + p4Total;
+ p1TotalFraction = p1Total / maxTotal;
+ //catn("Fraction with p1 ancestry: " + p1TotalFraction);
+ p2TotalFraction = p2Total / maxTotal;
+ //catn("Fraction with p2 ancestry: " + p2TotalFraction);
+ p3TotalFraction = p3Total / maxTotal;
+ //catn("Fraction with p3 ancestry: " + p3TotalFraction);
+ p4TotalFraction = p4Total / maxTotal;
+ //catn("Fraction with p4 ancestry: " + p4TotalFraction);
+
+header = paste("X", ",", "P1AncestryProportion", ",", "P2AncestryProportion", ",", "P3AncestryProportion", ",", "P4AncestryProportion");
+writeFile(paste(c("./output/mut_",REP,".csv"), sep=""), header);
+ count = 0;
+ p1TrueAnFracTotal = 0;
+ p2TrueAnFracTotal = 0;
+ p3TrueAnFracTotal = 0;
+ p4TrueAnFracTotal = 0;
+for (i in p9.individuals)
+ 	{
+ 		TrueAnTot = i.countOfMutationsOfType(m2) + i.countOfMutationsOfType(m3) + i.countOfMutationsOfType(m4) + i.countOfMutationsOfType(m5) + i.countOfMutationsOfType(m6) + i.countOfMutationsOfType(m7) + i.countOfMutationsOfType(m8) + i.countOfMutationsOfType(m9) + i.countOfMutationsOfType(m10) + i.countOfMutationsOfType(m11) + i.countOfMutationsOfType(m12) + i.countOfMutationsOfType(m13) + i.countOfMutationsOfType(m14) + i.countOfMutationsOfType(m15) + i.countOfMutationsOfType(m16) + i.countOfMutationsOfType(m17) + i.countOfMutationsOfType(m18) + i.countOfMutationsOfType(m19) + i.countOfMutationsOfType(m20) + i.countOfMutationsOfType(m21) + i.countOfMutationsOfType(m22) + i.countOfMutationsOfType(m23) + i.countOfMutationsOfType(m24) + i.countOfMutationsOfType(m25) + i.countOfMutationsOfType(m26) + i.countOfMutationsOfType(m27) + i.countOfMutationsOfType(m28) + i.countOfMutationsOfType(m29) + i.countOfMutationsOfType(m30) + i.countOfMutationsOfType(m31) + i.countOfMutationsOfType(m32) + i.countOfMutationsOfType(m33) + i.countOfMutationsOfType(m34) + i.countOfMutationsOfType(m35) + i.countOfMutationsOfType(m36) + i.countOfMutationsOfType(m37) + i.countOfMutationsOfType(m38) + i.countOfMutationsOfType(m39) + i.countOfMutationsOfType(m40) + i.countOfMutationsOfType(m41) + i.countOfMutationsOfType(m42) + i.countOfMutationsOfType(m43) + i.countOfMutationsOfType(m44) + i.countOfMutationsOfType(m45) + i.countOfMutationsOfType(m46) + i.countOfMutationsOfType(m47) + i.countOfMutationsOfType(m48) + i.countOfMutationsOfType(m49) + i.countOfMutationsOfType(m50) + i.countOfMutationsOfType(m51) + i.countOfMutationsOfType(m52) + i.countOfMutationsOfType(m53) + i.countOfMutationsOfType(m54) + i.countOfMutationsOfType(m55) + i.countOfMutationsOfType(m56) + i.countOfMutationsOfType(m57) + i.countOfMutationsOfType(m58) + i.countOfMutationsOfType(m59) + i.countOfMutationsOfType(m60) + i.countOfMutationsOfType(m61) + i.countOfMutationsOfType(m62) + i.countOfMutationsOfType(m63) + i.countOfMutationsOfType(m64) + i.countOfMutationsOfType(m65) + i.countOfMutationsOfType(m66) + i.countOfMutationsOfType(m67) + i.countOfMutationsOfType(m68) + i.countOfMutationsOfType(m69) + i.countOfMutationsOfType(m70) + i.countOfMutationsOfType(m71) + i.countOfMutationsOfType(m72) + i.countOfMutationsOfType(m73) + i.countOfMutationsOfType(m74) + i.countOfMutationsOfType(m75) + i.countOfMutationsOfType(m76) + i.countOfMutationsOfType(m77) + i.countOfMutationsOfType(m78) + i.countOfMutationsOfType(m79) + i.countOfMutationsOfType(m80) + i.countOfMutationsOfType(m81) + i.countOfMutationsOfType(m82) + i.countOfMutationsOfType(m83) + i.countOfMutationsOfType(m84) + i.countOfMutationsOfType(m85) + i.countOfMutationsOfType(m86) + i.countOfMutationsOfType(m87) + i.countOfMutationsOfType(m88) + i.countOfMutationsOfType(m89) + i.countOfMutationsOfType(m90) + i.countOfMutationsOfType(m91) + i.countOfMutationsOfType(m92) + i.countOfMutationsOfType(m93) + i.countOfMutationsOfType(m94) + i.countOfMutationsOfType(m95) + i.countOfMutationsOfType(m96) + i.countOfMutationsOfType(m97);
+
+
+		p1TrueAn = i.countOfMutationsOfType(m2) + i.countOfMutationsOfType(m3) + i.countOfMutationsOfType(m4) + i.countOfMutationsOfType(m5) + i.countOfMutationsOfType(m6) + i.countOfMutationsOfType(m7) + i.countOfMutationsOfType(m8) + i.countOfMutationsOfType(m9) + i.countOfMutationsOfType(m10) + i.countOfMutationsOfType(m11) + i.countOfMutationsOfType(m12) + i.countOfMutationsOfType(m13) + i.countOfMutationsOfType(m14) + i.countOfMutationsOfType(m15) + i.countOfMutationsOfType(m16) + i.countOfMutationsOfType(m17) + i.countOfMutationsOfType(m18) + i.countOfMutationsOfType(m19) + i.countOfMutationsOfType(m20) + i.countOfMutationsOfType(m21) + i.countOfMutationsOfType(m22) + i.countOfMutationsOfType(m23) + i.countOfMutationsOfType(m24) + i.countOfMutationsOfType(m25);
+		p1TrueAnFrac = p1TrueAn / TrueAnTot;
+		
+		p2TrueAn = i.countOfMutationsOfType(m26) + i.countOfMutationsOfType(m27) + i.countOfMutationsOfType(m28) + i.countOfMutationsOfType(m29) + i.countOfMutationsOfType(m30) + i.countOfMutationsOfType(m31) + i.countOfMutationsOfType(m32) + i.countOfMutationsOfType(m33) + i.countOfMutationsOfType(m34) + i.countOfMutationsOfType(m35) + i.countOfMutationsOfType(m36) + i.countOfMutationsOfType(m37) + i.countOfMutationsOfType(m38) + i.countOfMutationsOfType(m39) + i.countOfMutationsOfType(m40) + i.countOfMutationsOfType(m41) + i.countOfMutationsOfType(m42) + i.countOfMutationsOfType(m43) + i.countOfMutationsOfType(m44) + i.countOfMutationsOfType(m45) + i.countOfMutationsOfType(m46) + i.countOfMutationsOfType(m47) + i.countOfMutationsOfType(m48) + i.countOfMutationsOfType(m49);
+		p2TrueAnFrac = p2TrueAn / TrueAnTot;
+
+		p3TrueAn = i.countOfMutationsOfType(m50) + i.countOfMutationsOfType(m51) + i.countOfMutationsOfType(m52) + i.countOfMutationsOfType(m53) + i.countOfMutationsOfType(m54) + i.countOfMutationsOfType(m55) + i.countOfMutationsOfType(m56) + i.countOfMutationsOfType(m57) + i.countOfMutationsOfType(m58) + i.countOfMutationsOfType(m59) + i.countOfMutationsOfType(m60) + i.countOfMutationsOfType(m61) + i.countOfMutationsOfType(m62) + i.countOfMutationsOfType(m63) + i.countOfMutationsOfType(m64) + i.countOfMutationsOfType(m65) + i.countOfMutationsOfType(m66) + i.countOfMutationsOfType(m67) + i.countOfMutationsOfType(m68) + i.countOfMutationsOfType(m69) + i.countOfMutationsOfType(m70) + i.countOfMutationsOfType(m71) + i.countOfMutationsOfType(m72) + i.countOfMutationsOfType(m73);
+		p3TrueAnFrac = p3TrueAn / TrueAnTot;
+		
+		p4TrueAn = i.countOfMutationsOfType(m74) + i.countOfMutationsOfType(m75) + i.countOfMutationsOfType(m76) + i.countOfMutationsOfType(m77) + i.countOfMutationsOfType(m78) + i.countOfMutationsOfType(m79) + i.countOfMutationsOfType(m80) + i.countOfMutationsOfType(m81) + i.countOfMutationsOfType(m82) + i.countOfMutationsOfType(m83) + i.countOfMutationsOfType(m84) + i.countOfMutationsOfType(m85) + i.countOfMutationsOfType(m86) + i.countOfMutationsOfType(m87) + i.countOfMutationsOfType(m88) + i.countOfMutationsOfType(m89) + i.countOfMutationsOfType(m90) + i.countOfMutationsOfType(m91) + i.countOfMutationsOfType(m92) + i.countOfMutationsOfType(m93) + i.countOfMutationsOfType(m94) + i.countOfMutationsOfType(m95) + i.countOfMutationsOfType(m96) + i.countOfMutationsOfType(m97);
+		p4TrueAnFrac = p4TrueAn / TrueAnTot;
+		
+		
+		//catn(p1TrueAnFrac	+ "	" + p2TrueAnFrac + "	" + p3TrueAnFrac + "	" + p4TrueAnFrac + "	" + p5TrueAnFrac	+ "	" + p6TrueAnFrac + "	" + p7TrueAnFrac + "	" + p8TrueAnFrac);
+      if (p1TrueAnFrac > 0.3)
+      p1TrueAnFracTotal = p1TrueAnFracTotal + 1;
+
+      if (p2TrueAnFrac > 0.3)
+      p2TrueAnFracTotal = p2TrueAnFracTotal + 1;
+
+      if (p3TrueAnFrac > 0.3)
+      p3TrueAnFracTotal = p3TrueAnFracTotal + 1;
+
+      if (p4TrueAnFrac > 0.3)
+      p4TrueAnFracTotal = p4TrueAnFracTotal + 1;
+      
+		
+		line = paste(count, ",", p1TrueAnFrac, ",", p2TrueAnFrac, ",", p3TrueAnFrac, ",", p4TrueAnFrac);
+		writeFile(paste(c("./output/mut_",REP,".csv"), sep=""), line, append=T);
+		count = count + 1;
+
+	} 
+//print(p1TrueAnFracTotal);
+//print(p2TrueAnFracTotal);
+//print(p3TrueAnFracTotal);
+//print(p4TrueAnFracTotal); 
+//print(p5TrueAnFracTotal);
+//print(p6TrueAnFracTotal);
+//print(p7TrueAnFracTotal);
+//print(p8TrueAnFracTotal); 
+//print(p1TrueAnFracTotal + p2TrueAnFracTotal + p3TrueAnFracTotal + p4TrueAnFracTotal + p5TrueAnFracTotal + p6TrueAnFracTotal + p7TrueAnFracTotal + p8TrueAnFracTotal);
+ sim.simulationFinished();
+} 
